@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe estrutural - Kauthec do Brasil</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f7f7; --block:#ffffff; --ph:#e9e9e9; --line:#dddddd;
+    --ink:#2a2a2a; --muted:#777777; --soft:rgba(0,0,0,0.05);
+  }
+  *{font-family:'Inter',Arial,sans-serif;}
+  body{background:var(--bg);color:var(--ink);}
+  .block{background:var(--block);border:1px solid var(--line);border-radius:8px;box-shadow:0 1px 3px var(--soft);}
+  .ph{background:var(--ph);border:1px dashed var(--line);border-radius:8px;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;padding:16px;}
+  .btn{border-radius:8px;font-weight:600;font-size:14px;padding:12px 20px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .15s;}
+  .btn-fill{background:#3a3a3a;color:#fff;}
+  .btn-fill:hover{background:#222;}
+  .btn-out{background:#fff;color:#3a3a3a;border:1px solid var(--line);}
+  .btn-out:hover{border-color:#bbb;}
+  .nav-item{cursor:pointer;font-size:14px;font-weight:500;color:var(--muted);padding:6px 2px;border-bottom:2px solid transparent;}
+  .nav-item:hover{color:var(--ink);}
+  .nav-item.active{color:var(--ink);border-bottom-color:#3a3a3a;}
+  .kicker{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);}
+  .flag{background:#fff8e6;border:1px dashed #e0c067;border-radius:6px;color:#8a6d1f;font-size:12px;padding:8px 12px;display:flex;gap:8px;align-items:flex-start;}
+  .star{border:1px solid #cfcfcf;box-shadow:0 2px 10px rgba(0,0,0,.08);position:relative;}
+  .badge{position:absolute;top:-10px;left:16px;background:#3a3a3a;color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px;}
+  .tag{background:#fff;border:1px solid var(--line);border-radius:999px;font-size:13px;padding:6px 14px;color:var(--ink);}
+  .page{display:none;}
+  .page.active{display:block;}
+  html{scroll-behavior:smooth;}
+  .sec{scroll-margin-top:80px;}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP NAV (fixo) ================= -->
+<header class="fixed top-0 left-0 right-0 z-50" style="background:rgba(247,247,247,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-2 cursor-pointer" onclick="navigateToPage('home')">
+      <div class="ph" style="width:34px;height:34px;padding:0;font-size:10px;">logo</div>
+      <span class="font-bold tracking-tight">KAUTHEC</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-7">
+      <span class="nav-item" data-nav="home" onclick="navigateToPage('home')">Início</span>
+      <span class="nav-item" data-nav="produtos" onclick="navigateToPage('produtos')">Produtos</span>
+      <span class="nav-item" data-nav="revendedor" onclick="navigateToPage('revendedor')">Seja Parceiro</span>
+      <span class="nav-item" data-nav="contato" onclick="navigateToPage('contato')">Contato</span>
+    </nav>
+    <div class="flex items-center gap-2">
+      <span class="btn btn-out hidden sm:inline-flex" onclick="navigateToPage('contato')">WhatsApp →</span>
+      <span class="btn btn-fill" onclick="navigateToPage('revendedor')">Seja Parceiro</span>
+    </div>
+  </div>
+  <nav class="md:hidden flex items-center justify-around px-3 pb-2 -mt-1">
+    <span class="nav-item" data-nav="home" onclick="navigateToPage('home')">Início</span>
+    <span class="nav-item" data-nav="produtos" onclick="navigateToPage('produtos')">Produtos</span>
+    <span class="nav-item" data-nav="revendedor" onclick="navigateToPage('revendedor')">Parceiro</span>
+    <span class="nav-item" data-nav="contato" onclick="navigateToPage('contato')">Contato</span>
+  </nav>
+</header>
+
+<main class="pt-28 md:pt-20">
+
+<!-- ============================================================ -->
+<!-- ============================ HOME ========================== -->
+<!-- ============================================================ -->
+<section id="home" class="page active">
+
+  <!-- HERO -->
+  <div id="hero" class="sec max-w-6xl mx-auto px-5 pt-8 pb-16">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <p class="kicker mb-4">Importadora de correias desde 2007 · NBR · DIN · ISO · ASTM · RMA · Unidades em PR e MT</p>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">Seja parceiro de uma importadora que entrega no prazo que você promete.</h1>
+        <p class="text-base md:text-lg" style="color:var(--muted);max-width:48ch;">A Kauthec importa e distribui correias industriais e agrícolas. Você cuida do seu cliente, a gente garante o prazo de entrega, o estoque em linha e o laudo técnico das unidades de PR e MT.</p>
+        <div class="flex flex-wrap gap-3 mt-7">
+          <span class="btn btn-fill" onclick="navigateToPage('revendedor')">Quero ser parceiro</span>
+          <span class="btn btn-out" onclick="navigateToPage('contato')">Falar no WhatsApp →</span>
+        </div>
+        <div class="flag mt-5" style="max-width:52ch;">
+          <span>◇</span><span><b>H1 alternativo (teste A/B):</b> "A correia certa, no prazo que você prometeu ao seu cliente."</span>
+        </div>
+      </div>
+      <div class="ph" style="min-height:320px;">Imagem-chave: correia industrial / expedição rápida.<br>Precisa transmitir o diferencial de prazo, não ser foto genérica de estoque.</div>
+    </div>
+  </div>
+
+  <!-- BARRA DE NÚMEROS + CERTIFICAÇÕES -->
+  <div class="bg-white" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="max-w-6xl mx-auto px-5 py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div><div class="text-2xl md:text-3xl font-bold">Desde 2007</div><div class="text-sm" style="color:var(--muted)">no mercado de correias</div></div>
+        <div><div class="text-2xl md:text-3xl font-bold">+100</div><div class="text-sm" style="color:var(--muted)">clientes no Brasil</div></div>
+        <div><div class="text-2xl md:text-3xl font-bold">+10.000 m</div><div class="text-sm" style="color:var(--muted)">de correia entregues por mês</div></div>
+        <div><div class="text-2xl md:text-3xl font-bold">5 linhas</div><div class="text-sm" style="color:var(--muted)">de produto em estoque</div></div>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
+        <span class="text-sm" style="color:var(--muted)">Certificações:</span>
+        <span class="tag">NBR</span><span class="tag">DIN</span><span class="tag">ISO</span><span class="tag">ASTM</span><span class="tag">RMA</span>
+      </div>
+      <div class="flag mt-6 mx-auto" style="max-width:60ch;"><span>⚑</span><span><b>A confirmar:</b> números do site atual. O contador antigo estava quebrado. Confirmar valores reais com o Bruno antes do build.</span></div>
+    </div>
+  </div>
+
+  <!-- SOBRE A KAUTHEC (vídeo institucional) -->
+  <div id="sobre" class="sec max-w-6xl mx-auto px-5 py-16">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="ph" style="min-height:280px;">Vídeo institucional (YouTube)<br><span style="font-size:11px">já existe: youtu.be/eehBfJf0BmQ - confirmar se ainda representa a empresa</span></div>
+      <div>
+        <p class="kicker mb-3">Quem é a Kauthec</p>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Uma das principais importadoras de correias do país.</h2>
+        <p style="color:var(--muted)" class="mb-4">Desde 2007 a Kauthec abastece o Brasil com correias industriais e agrícolas, unindo linha completa em estoque, laudo técnico e agilidade de entrega das unidades de Ibiporã-PR e Várzea Grande-MT.</p>
+        <p style="color:var(--muted)">Trabalhamos lado a lado com quem revende: nosso resultado depende do sucesso do parceiro na ponta.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIFERENCIAL (prazo como estrela) -->
+  <div id="diferencial" class="bg-white sec" style="border-top:1px solid var(--line);">
+    <div class="max-w-6xl mx-auto px-5 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold mb-2">O que faz o parceiro escolher a Kauthec.</h2>
+      <p style="color:var(--muted);max-width:60ch;" class="mb-9">Não é catálogo. É retaguarda para você vender com segurança.</p>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="block star p-6 md:col-span-2">
+          <span class="badge">Nosso diferencial</span>
+          <h3 class="font-semibold text-xl mb-2">Prazo de entrega que o concorrente não acompanha</h3>
+          <p class="text-sm" style="color:var(--muted);max-width:60ch;">Estoque em linha e logística das unidades de PR e MT para você prometer prazo ao seu cliente e cumprir. Máquina parada é o que mais dói na indústria e no agro, e é aí que a Kauthec ganha.</p>
+          <div class="flag mt-4"><span>⚑</span><span><b>A confirmar:</b> prazo médio real (ex: "entrega em X dias úteis") para virar número no headline.</span></div>
+        </div>
+        <div class="block p-6">
+          <div class="ph mb-4" style="width:40px;height:40px;padding:0;font-size:10px;">ícone</div>
+          <h3 class="font-semibold text-lg mb-2">Parceria de verdade</h3>
+          <p class="text-sm" style="color:var(--muted)">O revendedor é tratado como parceiro, não como mais um pedido. A gente cresce quando você cresce.</p>
+        </div>
+        <div class="block p-6">
+          <div class="ph mb-4" style="width:40px;height:40px;padding:0;font-size:10px;">ícone</div>
+          <h3 class="font-semibold text-lg mb-2">Estoque em linha</h3>
+          <p class="text-sm" style="color:var(--muted)">Cinco linhas prontas nas duas unidades. Menos espera, menos venda perdida.</p>
+        </div>
+        <div class="block p-6">
+          <div class="ph mb-4" style="width:40px;height:40px;padding:0;font-size:10px;">ícone</div>
+          <h3 class="font-semibold text-lg mb-2">Laudo e certificação</h3>
+          <p class="text-sm" style="color:var(--muted)">NBR, DIN, ISO, ASTM e RMA. Você revende importado sem medo de reclamação na ponta.</p>
+        </div>
+        <div class="block p-6">
+          <div class="ph mb-4" style="width:40px;height:40px;padding:0;font-size:10px;">ícone</div>
+          <h3 class="font-semibold text-lg mb-2">Suporte para vender</h3>
+          <p class="text-sm" style="color:var(--muted)">Material técnico para o parceiro apresentar e fechar com mais segurança.</p>
+          <div class="flag mt-4"><span>⚑</span><span><b>Gancho fase 2:</b> futura "Central de Marketing" para os parceiros.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINHA DE PRODUTOS (Correia em V = carro-chefe) -->
+  <div class="sec max-w-6xl mx-auto px-5 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">Linha completa de correias e borracha</h2>
+    <p style="color:var(--muted)" class="mb-9">Cinco linhas importadas e mantidas em estoque.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="block star overflow-hidden">
+        <span class="badge">Carro-chefe</span>
+        <div class="ph" style="height:150px;border:none;border-radius:0;">foto produto</div>
+        <div class="p-5"><h3 class="font-semibold mb-1">Correias em V</h3><p class="text-sm" style="color:var(--muted)">O carro-chefe da Kauthec. Industriais e agrícolas, lisas e dentadas, sextavadas, para transmissão de potência.</p><span class="text-sm font-semibold mt-3 inline-block cursor-pointer" onclick="navigateToPage('produtos')">Ver especificações →</span></div>
+      </div>
+      <div class="block overflow-hidden">
+        <div class="ph" style="height:150px;border:none;border-radius:0;">foto produto</div>
+        <div class="p-5"><h3 class="font-semibold mb-1">Correias Transportadoras</h3><p class="text-sm" style="color:var(--muted)">Carcaça poliéster/nylon, para impacto, abrasão e granel pesado.</p><span class="text-sm font-semibold mt-3 inline-block cursor-pointer" onclick="navigateToPage('produtos')">Ver especificações →</span></div>
+      </div>
+      <div class="block overflow-hidden">
+        <div class="ph" style="height:150px;border:none;border-radius:0;">foto produto</div>
+        <div class="p-5"><h3 class="font-semibold mb-1">Correias de PVC e PU</h3><p class="text-sm" style="color:var(--muted)">Transporte leve, alimentício e linhas de produção. Com calculadora própria.</p><span class="text-sm font-semibold mt-3 inline-block cursor-pointer" onclick="navigateToPage('produtos')">Calcular e ver specs →</span></div>
+      </div>
+      <div class="block overflow-hidden">
+        <div class="ph" style="height:150px;border:none;border-radius:0;">foto produto</div>
+        <div class="p-5"><h3 class="font-semibold mb-1">Correias Laminadas e Elevadoras</h3><p class="text-sm" style="color:var(--muted)">Com e sem taliscas, para elevação de grãos e materiais.</p><span class="text-sm font-semibold mt-3 inline-block cursor-pointer" onclick="navigateToPage('produtos')">Ver especificações →</span></div>
+      </div>
+      <div class="block overflow-hidden">
+        <div class="ph" style="height:150px;border:none;border-radius:0;">foto produto</div>
+        <div class="p-5"><h3 class="font-semibold mb-1">Lençol de Borracha</h3><p class="text-sm" style="color:var(--muted)">Para revestimento e proteção contra abrasão.</p><span class="text-sm font-semibold mt-3 inline-block cursor-pointer" onclick="navigateToPage('produtos')">Ver especificações →</span></div>
+      </div>
+      <div class="block overflow-hidden flex items-center justify-center p-5" style="background:#fafafa;">
+        <div class="text-center"><p class="text-sm mb-3" style="color:var(--muted)">Precisa de uma correia específica?</p><span class="btn btn-out" onclick="navigateToPage('contato')">Pedir orçamento →</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALCULADORA PVC/PU (teaser) -->
+  <div class="bg-white sec" style="border-top:1px solid var(--line);">
+    <div class="max-w-5xl mx-auto px-5 py-16">
+      <div class="block p-8 md:flex items-center justify-between gap-8">
+        <div class="mb-5 md:mb-0">
+          <p class="kicker mb-2">Ferramenta</p>
+          <h2 class="text-2xl font-bold mb-2">Calcule sua correia de PVC e PU</h2>
+          <p class="text-sm" style="color:var(--muted);max-width:52ch;">Informe as medidas e a aplicação e receba a referência ideal na hora. Feito para o parceiro cotar rápido, sem depender de tabela impressa.</p>
+          <div class="flag mt-4"><span>⚑</span><span><b>Feature interativa (build):</b> calculadora real de correia PVC/PU. Definir com o Bruno os campos e a fórmula de cálculo.</span></div>
+        </div>
+        <div class="ph" style="min-width:220px;min-height:150px;">Interface da calculadora<br>(comprimento, largura, aplicação → referência)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDÚSTRIAS -->
+  <div class="sec max-w-6xl mx-auto px-5 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">Onde nossas correias trabalham</h2>
+    <p style="color:var(--muted)" class="mb-7">Segmentação por indústria, no espírito da referência que o cliente escolheu (Mercúrio).</p>
+    <div class="flex flex-wrap gap-3">
+      <span class="tag">Agroindústria</span><span class="tag">Cimenteira</span><span class="tag">Mineração</span><span class="tag">Madeireira</span><span class="tag">Pedreira</span><span class="tag">Papel e Celulose</span><span class="tag">Petroquímica</span><span class="tag">Siderurgia</span><span class="tag">Portos</span><span class="tag">Usinas</span>
+    </div>
+  </div>
+
+  <!-- COMO VIRAR PARCEIRO -->
+  <div class="bg-white sec" style="border-top:1px solid var(--line);">
+    <div class="max-w-6xl mx-auto px-5 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold mb-9">Virar parceiro Kauthec é simples</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="block p-6"><div class="text-3xl font-bold mb-3" style="color:var(--muted)">1</div><h3 class="font-semibold mb-2">Fale com a gente</h3><p class="text-sm" style="color:var(--muted)">Preencha o formulário ou chame no WhatsApp. Tenha em mãos CNPJ e cópia do contrato social.</p></div>
+        <div class="block p-6"><div class="text-3xl font-bold mb-3" style="color:var(--muted)">2</div><h3 class="font-semibold mb-2">Receba a proposta de parceria</h3><p class="text-sm" style="color:var(--muted)">Condições, linhas disponíveis e região de atuação.</p></div>
+        <div class="block p-6"><div class="text-3xl font-bold mb-3" style="color:var(--muted)">3</div><h3 class="font-semibold mb-2">Comece a revender</h3><p class="text-sm" style="color:var(--muted)">Com prazo garantido, estoque, laudo técnico e suporte por trás de você.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROVA SOCIAL -->
+  <div class="sec max-w-6xl mx-auto px-5 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">Quem já é parceiro da Kauthec</h2>
+    <div class="flag mb-7" style="max-width:60ch;"><span>⚑</span><span><b>Precisa de material real:</b> depoimentos de parceiros e logos de clientes. Briefing diz que não há nada pronto. Sem isso, esta seção enfraquece ou sai do v1.</span></div>
+    <div class="grid md:grid-cols-3 gap-5 mb-8">
+      <div class="block p-6"><div class="ph mb-4" style="height:60px;">"depoimento de parceiro real"</div><div class="flex items-center gap-3"><div class="ph" style="width:40px;height:40px;border-radius:999px;padding:0;font-size:9px;">foto</div><div><div class="text-sm font-semibold">Nome do parceiro</div><div class="text-xs" style="color:var(--muted)">Empresa, cidade</div></div></div></div>
+      <div class="block p-6"><div class="ph mb-4" style="height:60px;">"depoimento de parceiro real"</div><div class="flex items-center gap-3"><div class="ph" style="width:40px;height:40px;border-radius:999px;padding:0;font-size:9px;">foto</div><div><div class="text-sm font-semibold">Nome do parceiro</div><div class="text-xs" style="color:var(--muted)">Empresa, cidade</div></div></div></div>
+      <div class="block p-6"><div class="ph mb-4" style="height:60px;">"depoimento de parceiro real"</div><div class="flex items-center gap-3"><div class="ph" style="width:40px;height:40px;border-radius:999px;padding:0;font-size:9px;">foto</div><div><div class="text-sm font-semibold">Nome do parceiro</div><div class="text-xs" style="color:var(--muted)">Empresa, cidade</div></div></div></div>
+    </div>
+    <div class="grid grid-cols-3 md:grid-cols-6 gap-3">
+      <div class="ph" style="height:50px;">logo</div><div class="ph" style="height:50px;">logo</div><div class="ph" style="height:50px;">logo</div><div class="ph" style="height:50px;">logo</div><div class="ph" style="height:50px;">logo</div><div class="ph" style="height:50px;">logo</div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="bg-white sec" style="border-top:1px solid var(--line);">
+    <div class="max-w-4xl mx-auto px-5 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold mb-9">Perguntas que todo parceiro faz</h2>
+      <div class="space-y-3">
+        <div class="block p-5"><div class="font-semibold mb-1">Que documentos preciso para me tornar parceiro?</div><p class="text-sm" style="color:var(--muted)">CNPJ ativo e cópia do contrato social. Com isso a gente já monta sua proposta de parceria.</p></div>
+        <div class="block p-5"><div class="font-semibold mb-1">Qual é o prazo de entrega?</div><p class="text-sm" style="color:var(--muted)">É o nosso diferencial. Estoque em linha e expedição das unidades de PR e MT. [prazo exato a definir com o Bruno]</p><div class="flag mt-3"><span>⚑</span><span>A confirmar: prazo médio real.</span></div></div>
+        <div class="block p-5"><div class="font-semibold mb-1">Tem quantidade mínima para revender?</div><p class="text-sm" style="color:var(--muted)">[a definir com o Bruno]</p><div class="flag mt-3"><span>⚑</span><span>A confirmar: existe pedido mínimo?</span></div></div>
+        <div class="block p-5"><div class="font-semibold mb-1">Correia importada tem a mesma qualidade?</div><p class="text-sm" style="color:var(--muted)">Sim. As correias seguem NBR, DIN, ISO, ASTM e RMA, com laudo técnico disponível.</p></div>
+        <div class="block p-5"><div class="font-semibold mb-1">Vocês atendem a minha região?</div><p class="text-sm" style="color:var(--muted)">Atendimento nacional, com despacho das unidades de Ibiporã-PR e Várzea Grande-MT.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div id="cta" class="sec max-w-5xl mx-auto px-5 py-16">
+    <div class="block p-8 md:p-12 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3">Pronto para revender com quem entrega no prazo?</h2>
+      <p style="color:var(--muted)" class="mb-8 max-w-xl mx-auto">Preencha e a equipe comercial entra em contato com a proposta de parceria.</p>
+      <div class="grid sm:grid-cols-2 gap-3 max-w-xl mx-auto text-left">
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Nome</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Empresa / CNPJ</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Cidade / UF</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">WhatsApp</div>
+      </div>
+      <p class="text-xs mt-3" style="color:var(--muted)">Para fechar a parceria pediremos CNPJ e cópia do contrato social.</p>
+      <div class="flex flex-wrap gap-3 justify-center mt-6">
+        <span class="btn btn-fill" onclick="navigateToPage('revendedor')">Quero ser parceiro</span>
+        <span class="btn btn-out" onclick="navigateToPage('contato')">Falar no WhatsApp →</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- ========================== PRODUTOS ======================== -->
+<!-- ============================================================ -->
+<section id="produtos" class="page">
+  <div class="max-w-6xl mx-auto px-5 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-3">Produtos</h1>
+    <p style="color:var(--muted)" class="mb-10 max-w-2xl">Cinco linhas em estoque. A Correia em V é o carro-chefe. Abaixo, o nível de detalhe técnico que dá autoridade (reaproveitado do acervo da Kauthec).</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+      <div class="block star p-5"><span class="badge">Carro-chefe</span><h3 class="font-semibold mb-1">Correias em V</h3><p class="text-sm" style="color:var(--muted)">Transmissão industrial e agrícola, lisas e dentadas, sextavadas.</p></div>
+      <div class="block p-5"><h3 class="font-semibold mb-1">Correias Transportadoras</h3><p class="text-sm" style="color:var(--muted)">Carcaça poliéster/nylon para granel pesado.</p></div>
+      <div class="block p-5"><h3 class="font-semibold mb-1">Correias de PVC e PU</h3><p class="text-sm" style="color:var(--muted)">Transporte leve, alimentício e produção. Tem calculadora.</p></div>
+      <div class="block p-5"><h3 class="font-semibold mb-1">Correias Laminadas e Elevadoras</h3><p class="text-sm" style="color:var(--muted)">Com e sem taliscas, elevação de grãos.</p></div>
+      <div class="block p-5"><h3 class="font-semibold mb-1">Lençol de Borracha</h3><p class="text-sm" style="color:var(--muted)">Revestimento e proteção contra abrasão.</p></div>
+    </div>
+
+    <!-- CALCULADORA PVC/PU -->
+    <div class="block p-6 mb-14">
+      <h2 class="text-xl md:text-2xl font-bold mb-2">Calculadora de correia PVC e PU</h2>
+      <p class="text-sm mb-4" style="color:var(--muted)">Ferramenta para o parceiro cotar rápido.</p>
+      <div class="grid sm:grid-cols-3 gap-3">
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Comprimento (mm)</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Largura (mm)</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Aplicação</div>
+      </div>
+      <div class="ph mt-3" style="height:60px;">Resultado: referência recomendada</div>
+      <div class="flag mt-4"><span>⚑</span><span><b>Feature interativa (build):</b> definir campos e fórmula real com o Bruno.</span></div>
+    </div>
+
+    <h2 class="text-xl md:text-2xl font-bold mb-2">Exemplo de detalhamento: Correias Transportadoras</h2>
+    <div class="flag mb-6" style="max-width:60ch;"><span>⚑</span><span><b>A confirmar:</b> tabelas de referência KT e coberturas vêm do site atual. Validar se ainda batem com o que a Kauthec vende.</span></div>
+
+    <div class="block p-6 mb-6">
+      <p class="text-sm mb-4" style="color:var(--muted)">Carcaça poliéster x nylon, atende às normas técnicas nacionais e internacionais. Resistência a impacto, abrasão e queda de material. Coberturas anti-óleo e anti-chama.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm" style="border-collapse:collapse;">
+          <thead><tr style="border-bottom:1px solid var(--line);text-align:left;color:var(--muted);">
+            <th class="py-2 pr-4">Referência</th><th class="py-2 pr-4">Tensão (kgf/cm)</th><th class="py-2 pr-4">Diâm. mín. rolete (mm)</th><th class="py-2">(pol)</th></tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #eee;"><td class="py-2 pr-4">KT 140/2L x 1/16 x 1/16</td><td>25</td><td>165</td><td>6.5</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td class="py-2 pr-4">KT 140/3L x 1/8 x 1/16</td><td>37,5</td><td>250</td><td>10</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td class="py-2 pr-4">KT 220/3L x 3/16 x 1/16</td><td>66</td><td>350</td><td>14</td></tr>
+            <tr><td class="py-2 pr-4">KT 220/3L x 3/8 x 1/8</td><td>66</td><td>350</td><td>14</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="block p-6">
+      <h3 class="font-semibold mb-3">Tipos de cobertura</h3>
+      <div class="space-y-2 text-sm">
+        <div><b>AA</b> - Alta Abrasão: areia, cal, cimento, calcário, soja, milho, trigo. Tipo RMA 2.</div>
+        <div><b>EA</b> - Extra Abrasão: brita, minério de ferro, granito, coque, escória. Tipo RMA 1.</div>
+        <div><b>ACAOE</b> - Anti Chama, Anti Estática e Óleo: silos, armazéns e corredores portuários, até 90 ºC.</div>
+        <div><b>CW</b> - Corrugada W: mercadorias leves em inclinação até 35 graus.</div>
+        <div><b>TT</b> / <b>TV</b> - Taliscada Trator / em V: granel em superfície inclinada.</div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3 mt-8">
+      <span class="btn btn-fill" onclick="navigateToPage('revendedor')">Quero revender essas linhas</span>
+      <span class="btn btn-out" onclick="navigateToPage('contato')">Pedir orçamento →</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ======================== SEJA PARCEIRO ==================== -->
+<!-- ============================================================ -->
+<section id="revendedor" class="page">
+  <div class="max-w-5xl mx-auto px-5 py-12">
+    <p class="kicker mb-3">Programa de parceria</p>
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 max-w-2xl">Seja parceiro de uma importadora que joga junto com você.</h1>
+    <p style="color:var(--muted)" class="mb-10 max-w-2xl">Prazo de entrega que seu cliente confia, estoque em linha, laudo técnico e suporte para você fechar mais vendas. Você cuida do cliente, a Kauthec cuida da retaguarda.</p>
+
+    <h2 class="text-xl font-bold mb-4">O que o parceiro Kauthec ganha</h2>
+    <div class="grid md:grid-cols-2 gap-4 mb-10">
+      <div class="block p-5"><h3 class="font-semibold mb-1">Prazo como argumento de venda</h3><p class="text-sm" style="color:var(--muted)">Prometa e cumpra prazo com o seu cliente. É o que fideliza na indústria e no agro.</p></div>
+      <div class="block p-5"><h3 class="font-semibold mb-1">Abastecimento garantido</h3><p class="text-sm" style="color:var(--muted)">Cinco linhas em estoque para você não ficar na mão.</p></div>
+      <div class="block p-5"><h3 class="font-semibold mb-1">Respaldo técnico</h3><p class="text-sm" style="color:var(--muted)">Certificações e laudo para vender importado com segurança.</p></div>
+      <div class="block p-5"><h3 class="font-semibold mb-1">Suporte para vender</h3><p class="text-sm" style="color:var(--muted)">Material técnico e, em breve, central de marketing para parceiros.</p></div>
+    </div>
+
+    <div class="block p-8">
+      <h2 class="text-xl font-bold mb-2">Quero receber a proposta de parceria</h2>
+      <p class="text-sm mb-5" style="color:var(--muted)">Para fechar a parceria pediremos CNPJ ativo e cópia do contrato social.</p>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Nome</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Empresa</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">CNPJ</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Cidade / UF</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">WhatsApp</div>
+        <div class="ph" style="height:46px;justify-content:flex-start;padding-left:14px;">Que linhas pretende revender?</div>
+        <div class="ph sm:col-span-2" style="height:56px;justify-content:flex-start;padding-left:14px;">Anexar cópia do contrato social (upload)</div>
+      </div>
+      <span class="btn btn-fill mt-5" onclick="alert('Wireframe: aqui o formulário envia o lead.')">Enviar e falar com o comercial</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ============================ CONTATO ======================= -->
+<!-- ============================================================ -->
+<section id="contato" class="page">
+  <div class="max-w-6xl mx-auto px-5 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-3">Contato</h1>
+    <p style="color:var(--muted)" class="mb-10">Duas unidades para atender Sul, Centro-Oeste e todo o país.</p>
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="block p-6">
+        <h3 class="font-semibold text-lg mb-2">Matriz - Ibiporã / PR</h3>
+        <p class="text-sm mb-1" style="color:var(--muted)">Rua Luiz Carlos Zani, 4199 - Parque Industrial V</p>
+        <p class="text-sm mb-1" style="color:var(--muted)">43 3373-6600 / 43 9 8815-8640</p>
+        <p class="text-sm mb-4" style="color:var(--muted)">comercial@kauthecdobrasil.com</p>
+        <span class="btn btn-out" onclick="alert('Wireframe: abriria o WhatsApp da matriz.')">WhatsApp PR →</span>
+      </div>
+      <div class="block p-6">
+        <h3 class="font-semibold text-lg mb-2">Filial - Várzea Grande / MT</h3>
+        <p class="text-sm mb-1" style="color:var(--muted)">Rua Brigadeiro Eduardo Gomes, 998 - Centro Sul</p>
+        <p class="text-sm mb-1" style="color:var(--muted)">65 3627-3737 / 65 9 9604-7226</p>
+        <p class="text-sm mb-4" style="color:var(--muted)">kauthecmt@kauthecdobrasil.com</p>
+        <span class="btn btn-out" onclick="alert('Wireframe: abriria o WhatsApp da filial.')">WhatsApp MT →</span>
+      </div>
+    </div>
+    <div class="ph" style="height:240px;">Mapa das duas unidades</div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================== RODAPÉ ============================== -->
+<footer class="bg-white mt-10" style="border-top:1px solid var(--line);">
+  <div class="max-w-6xl mx-auto px-5 py-10">
+    <div class="grid sm:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3"><div class="ph" style="width:30px;height:30px;padding:0;font-size:9px;">logo</div><span class="font-bold">KAUTHEC</span></div>
+        <p class="text-sm" style="color:var(--muted)">Importadora e distribuidora de correias industriais e agrícolas desde 2007.</p>
+      </div>
+      <div>
+        <div class="text-sm font-semibold mb-3">Navegação</div>
+        <div class="flex flex-col gap-2">
+          <span class="nav-item" onclick="navigateToPage('home')">Início</span>
+          <span class="nav-item" onclick="navigateToPage('produtos')">Produtos</span>
+          <span class="nav-item" onclick="navigateToPage('revendedor')">Seja Parceiro</span>
+          <span class="nav-item" onclick="navigateToPage('contato')">Contato</span>
+        </div>
+      </div>
+      <div>
+        <div class="text-sm font-semibold mb-3">Atendimento</div>
+        <p class="text-sm" style="color:var(--muted)">PR: 43 3373-6600<br>MT: 65 3627-3737<br>Atendimento nacional</p>
+      </div>
+    </div>
+    <div class="mt-10 pt-6" style="border-top:1px solid var(--line);">
+      <div class="flag" style="max-width:none;"><span>ℹ️</span><span>Este é um wireframe estrutural. A identidade visual final (cores, tipografia, imagens e composição) será criada no Claude Code com base no design system aprovado separadamente. Os selos ⚑ marcam pontos que dependem de confirmação do cliente.</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function navigateToPage(id){
+    document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+    var target = document.getElementById(id);
+    if(target){ target.classList.add('active'); }
+    document.querySelectorAll('[data-nav]').forEach(function(n){
+      n.classList.toggle('active', n.getAttribute('data-nav') === id);
+    });
+    window.scrollTo({top:0, behavior:'auto'});
+  }
+  navigateToPage('home');
+</script>
+</body>
+</html>

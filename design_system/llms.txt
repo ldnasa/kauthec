@@ -1,0 +1,66 @@
+# Kauthec do Brasil - Design System
+
+> Industrial Kauthec v1. Site institucional B2B que recruta revendedores (tratados como
+> parceiros) para uma importadora de correias industriais e agrícolas. O diferencial
+> central é o prazo de entrega. Stack: HTML5 + Tailwind CSS + vanilla JS.
+
+Você é um agente prestes a escrever UI. Leia nesta ordem. Não infira o sistema a partir
+de screenshot nem de prosa: leia os arquivos.
+
+## Leitura obrigatória, nesta ordem
+
+1. [tokens.css](tokens.css) - camada de token fechada. Layer 1 primitivo, Layer 2 alias.
+   Componente usa **apenas** Layer 2. Comece por aqui.
+2. [specs/tokens/token-reference.md](specs/tokens/token-reference.md) - o que cada token
+   significa e quando usar. Mapeia todos os tokens públicos.
+3. [DESIGN.md](DESIGN.md) - briefing de runtime: cor, tipo, forma, motion, a11y,
+   microcopy, perf, SEO. Os cinco gestos que fazem o site parecer Kauthec.
+4. [specs/foundations/anti-slop.md](specs/foundations/anti-slop.md) - o que este sistema
+   proíbe e por quê. Ler antes de "melhorar" qualquer coisa.
+
+## Antes de escrever um componente
+
+- [specs/components/button.md](specs/components/button.md)
+- [specs/components/spec-card.md](specs/components/spec-card.md) - card de produto. É uma
+  ficha técnica, não um card de blog.
+- [specs/components/form-field.md](specs/components/form-field.md) - inclui o upload do
+  contrato social.
+- [specs/patterns/hairline-grid.md](specs/patterns/hairline-grid.md) - a malha de fios.
+  O gesto central do sistema.
+- [specs/patterns/hero.md](specs/patterns/hero.md) - hero partido, rótulos de spec,
+  palavra em ouro no H1.
+
+## Contexto do projeto, fora do design system
+
+- [../03-copy-final.md](../03-copy-final.md) - **toda** a copy do site, as 4 páginas,
+  microcopy de formulário, meta tags, alt text. Nunca escreva copy nova sem consultar.
+- [../CLAUDE.md](../CLAUDE.md) - regras do projeto, palavras proibidas, convenções.
+- [../refs/00-analise-referencias.md](../refs/00-analise-referencias.md) - de onde cada
+  decisão do DS veio. Tokens extraídos do CSS de produção de três templates industriais.
+- [../01-debriefing.md](../01-debriefing.md) - público, dores, objeções, concorrência.
+- [../02-estrutura.md](../02-estrutura.md) - as 11 seções da Home e as outras 3 páginas.
+
+## Verificação
+
+- [scripts/token-audit.js](scripts/token-audit.js) - `node scripts/token-audit.js`.
+  Sai com código 1 se achar hex, px de espaçamento, radius, sombra, z-index ou duração
+  chumbados. Rode antes de considerar qualquer trabalho pronto.
+
+## Referência visual, para humanos
+
+- [showcase.html](showcase.html) - fonte visual da verdade. Abre no browser.
+  Se você é um agente, você não precisa dele: os specs contêm tudo.
+
+## Formatos de token
+
+- [tokens.json](tokens.json) - Figma Variables.
+- [tokens.dtcg.json](tokens.dtcg.json) - Design Tokens Community Group, vendor-neutral.
+
+## As cinco regras que mais quebram
+
+1. **Radius é 0.** Sempre. Botão, card, input, selo, imagem.
+2. **Ouro nunca é texto sobre fundo claro.** 1.90:1, reprova. Só preenchimento.
+3. **Corpo é 16px.** Piso absoluto. Nunca 14px.
+4. **Botão não levita no hover.** Troca a cor. `translateY` é proibido.
+5. **Palavra proibida quebra o build:** inovador, disruptivo, soluções, empoderador,
+   bem-vindo. Zero em-dash. Zero Mercosul.

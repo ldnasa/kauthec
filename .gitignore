@@ -1,0 +1,6 @@
+_archive/
+screenshots/
+node_modules/
+assets/images/_raw/
+.DS_Store
+Thumbs.db

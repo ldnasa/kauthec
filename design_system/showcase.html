@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="pt-BR" class="theme-dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kauthec DS v1 - Industrial Kauthec</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./tokens.css" />
+  <link rel="stylesheet" href="./showcase.css" />
+</head>
+<body>
+  <svg aria-hidden="true" class="icon-sprite">
+    <!-- Funcionais: base Lucide, terminais quadrados via CSS -->
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12"/><path d="m18 6-12 12"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8 8h11v11H8z"/><path d="M5 16H4V4h12v1"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 20h16"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
+    <symbol id="i-external-link" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5z"/></symbol>
+    <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h6"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><path d="M3 5h18v14H3z"/><circle cx="8" cy="10" r="1.5"/><path d="m21 16-5-5L5 19"/></symbol>
+
+    <!-- Bespoke Kauthec: o vocabulário da correia -->
+    <symbol id="i-belt-v" viewBox="0 0 24 24"><path d="M3 6h18l-4 12H7L3 6z"/><path d="M7 10h10"/><path d="M8.5 14h7"/></symbol>
+    <symbol id="i-conveyor" viewBox="0 0 24 24"><path d="M2 8h20v8H2z"/><circle cx="7" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="17" cy="12" r="2"/></symbol>
+    <symbol id="i-rubber-sheet" viewBox="0 0 24 24"><path d="M4 5h16v4H4z"/><path d="M4 11h16v4H4z"/><path d="M4 17h16v2H4z"/></symbol>
+    <symbol id="i-delivery" viewBox="0 0 24 24"><path d="M2 6h11v10H2z"/><path d="M13 9h4l4 4v3h-8z"/><circle cx="6" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></symbol>
+    <symbol id="i-stock" viewBox="0 0 24 24"><path d="M8 3h8v8H8z"/><path d="M3 13h8v8H3z"/><path d="M13 13h8v8h-8z"/></symbol>
+    <symbol id="i-certificate" viewBox="0 0 24 24"><path d="M6 2h12v13H6z"/><path d="M9 6h6"/><path d="M9 10h4"/><path d="m9 15-1 7 4-2.5L16 22l-1-7"/></symbol>
+    <symbol id="i-partnership" viewBox="0 0 24 24"><path d="M9 15l6-6"/><path d="M11 6h4a3.5 3.5 0 0 1 0 7h-1"/><path d="M13 18H9a3.5 3.5 0 0 1 0-7h1"/></symbol>
+    <symbol id="i-calculator" viewBox="0 0 24 24"><path d="M5 2h14v20H5z"/><path d="M8 6h8"/><path d="M8 11h2"/><path d="M14 11h2"/><path d="M8 15h2"/><path d="M14 15h2"/><path d="M8 19h8"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20l1.5-4.2A8 8 0 1 1 8.4 18.6L4 20z"/><path d="M9 9.5c0 3 2 5.5 5 5.5"/></symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 21V10l6 4v-4l6 4V3h6v18z"/><path d="M7 21v-4"/><path d="M13 21v-4"/></symbol>
+  </svg>
+
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brandmark" href="#top" aria-label="Voltar ao topo">
+        <span class="sigil" aria-hidden="true"></span>
+        <span>
+          <strong>Kauthec DS</strong>
+          <span>Industrial Kauthec v1</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Seções do design system">
+        <a href="#foundation">Base</a>
+        <a href="#color">Cor</a>
+        <a href="#type">Tipo</a>
+        <a href="#components">UI</a>
+        <a href="#motion">Motion</a>
+        <a href="#icons">Ícones</a>
+        <a href="#assets">Assets</a>
+        <a href="#quality">QA</a>
+        <a href="#ai-gen">AI Gen</a>
+        <a href="#os">OS</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="theme-toggle" type="button" id="themeToggle">
+          <span>Tema</span>
+          <strong id="themeLabel">Escuro</strong>
+        </button>
+        <span class="meta">Passo B. Antes do build.</span>
+      </div>
+    </aside>
+
+    <main id="top">
+      <!-- ============================================ HERO (north star) -->
+      <section class="hero" data-section="hero">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Kauthec do Brasil · Design System</span>
+          <h1 class="js-hero-title">Industrial. E no <span class="hl">prazo</span>.</h1>
+          <p class="lead">
+            O sistema que traduz correia, chapa e lâmina em interface: malha técnica,
+            canto reto, ouro como evento. Nada aqui é decoração.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#foundation">Ver o sistema <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn secondary" href="#os">Regras da marca <svg aria-hidden="true"><use href="#i-file-text"/></svg></a>
+          </div>
+          <div class="hero-meta">
+            <span>Ibiporã, PR</span>
+            <span>Várzea Grande, MT</span>
+            <span>Desde 2007</span>
+            <span>Role para ver</span>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="Ficha técnica da Kauthec">
+          <div class="hero-spec">
+            <span>Normas</span>
+            <strong>NBR · DIN · ISO · ASTM · RMA</strong>
+          </div>
+          <div class="hero-spec">
+            <span>Estoque</span>
+            <strong>+10.000 m por mês</strong>
+          </div>
+          <div class="hero-spec pending">
+            <span>Entrega</span>
+            <strong>[prazo em dias úteis]</strong>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ============================================ 01 BASE -->
+      <section id="foundation" class="section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">01 Base</span>
+            <h2>Regra antes de acabamento.</h2>
+          </div>
+          <p>Seis princípios extraídos do CSS de produção das três referências industriais, não de gosto. Cada um se paga em decisão de build.</p>
+        </header>
+
+        <div class="principle-grid reveal">
+          <article class="rule-tile">
+            <span class="tile-index">01</span>
+            <div>
+              <h3>A malha é o sistema</h3>
+              <p>Fio de cabelo de 1px desenhando o grid na tela. As três referências fazem isso, cada uma de um jeito. É o gesto de desenho técnico, e é o que separa industrial de corporativo genérico.</p>
+            </div>
+          </article>
+          <article class="rule-tile">
+            <span class="tile-index">02</span>
+            <div>
+              <h3>Zero radius, sem exceção</h3>
+              <p>Botão, card, input, imagem, selo. Tudo quadrado. Correia, chapa e lâmina não têm canto redondo. A referência principal declara border-radius sete vezes, e todas são zero.</p>
+            </div>
+          </article>
+          <article class="rule-tile">
+            <span class="tile-index">03</span>
+            <div>
+              <h3>Ouro é evento, nunca superfície</h3>
+              <p>Kicker, CTA, uma palavra do H1, hover, filete. Nunca texto corrido, nunca fundo de seção. Um acento e mais nada: sem paleta secundária.</p>
+            </div>
+          </article>
+          <article class="rule-tile">
+            <span class="tile-index">04</span>
+            <div>
+              <h3>Escuro por obrigação, não por moda</h3>
+              <p>#faa21b sobre branco dá 1.90:1 e reprova. Sobre #101011 dá 9.29:1 e passa AAA. O tema escuro não foi escolha estética: foi a única saída que deixa o ouro ser ouro.</p>
+            </div>
+          </article>
+          <article class="rule-tile">
+            <span class="tile-index">05</span>
+            <div>
+              <h3>O silêncio vende porte</h3>
+              <p>160px de respiro entre seções no desktop. É o item que mais separa template de builder de fabricante sério. As três referências ficam entre 150 e 200px.</p>
+            </div>
+          </article>
+          <article class="rule-tile">
+            <span class="tile-index">06</span>
+            <div>
+              <h3>Massa se move devagar</h3>
+              <p>cubic-bezier(.44, 0, .56, 1) a 450ms. Curva simétrica: acelera e desacelera igual. Sensação de coisa pesada. Duas das três referências usam exatamente essa curva.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="module-grid reveal" aria-label="Módulos do sistema">
+          <article><span>Cor</span><strong>Ouro sobre tinta. Contraste verificado, não estimado.</strong></article>
+          <article><span>Tipo</span><strong>DM Sans. Peso 500 é corpo, 700 é título, 900 é número.</strong></article>
+          <article><span>Espaço</span><strong>4 · 8 · 16 · 24 · 40 · 64 · 96. O 40 domina.</strong></article>
+          <article><span>Componentes</span><strong>Card vira ficha de spec. Botão não levita.</strong></article>
+          <article><span>Motion</span><strong>Reveal por bloco. Uma curva, duas durações.</strong></article>
+          <article><span>Narrativa</span><strong>Prazo é o eixo. Tudo aponta para o hero e o CTA final.</strong></article>
+        </div>
+      </section>
+
+      <!-- ============================================ 02 COR -->
+      <section id="color" class="section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">02 Cor</span>
+            <h2>Tinta, ouro, nada mais.</h2>
+          </div>
+          <p>Clique no swatch para copiar. O tema claro não é o escuro invertido: o ouro muda de papel, de acento de texto para preenchimento.</p>
+        </header>
+
+        <div class="color-layout reveal">
+          <div>
+            <div class="swatch-grid">
+              <button class="swatch" data-copy="#faa21b"><span style="background:#faa21b"></span><strong>Ouro 500</strong><em>#faa21b</em></button>
+              <button class="swatch" data-copy="#ffc861"><span style="background:#ffc861"></span><strong>Ouro 300 · hover</strong><em>#ffc861</em></button>
+              <button class="swatch" data-copy="#8a5a00"><span style="background:#8a5a00"></span><strong>Ouro 900 · texto claro</strong><em>#8a5a00</em></button>
+              <button class="swatch" data-copy="#070707"><span style="background:#070707"></span><strong>Tinta 1000 · logo</strong><em>#070707</em></button>
+              <button class="swatch" data-copy="#101011"><span style="background:#101011"></span><strong>Tinta 950 · fundo</strong><em>#101011</em></button>
+              <button class="swatch" data-copy="#1b1b1b"><span style="background:#1b1b1b"></span><strong>Tinta 900 · superfície</strong><em>#1b1b1b</em></button>
+              <button class="swatch" data-copy="#9e9e9e"><span style="background:#9e9e9e"></span><strong>Cinza 500</strong><em>#9e9e9e</em></button>
+              <button class="swatch" data-copy="#f6f6f6"><span style="background:#f6f6f6"></span><strong>Cinza 100 · fundo claro</strong><em>#f6f6f6</em></button>
+            </div>
+
+            <table class="contrast-table">
+              <caption class="meta">Contraste WCAG calculado, não estimado</caption>
+              <thead>
+                <tr><th>Frente</th><th>Fundo</th><th>Uso</th><th>Ratio</th><th>Veredito</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>#faa21b</td><td>#101011</td><td>Kicker, palavra do H1, link</td><td>9.29:1</td><td class="pass">AAA</td></tr>
+                <tr><td>#faa21b</td><td>#1b1b1b</td><td>Acento sobre superfície</td><td>8.40:1</td><td class="pass">AAA</td></tr>
+                <tr><td>#070707</td><td>#faa21b</td><td>Texto no botão dourado</td><td>9.83:1</td><td class="pass">AAA</td></tr>
+                <tr><td>#ffffff</td><td>#101011</td><td>Corpo sobre escuro</td><td>19.03:1</td><td class="pass">AAA</td></tr>
+                <tr><td>#8a5a00</td><td>#f6f6f6</td><td>Texto ouro no tema claro</td><td>5.49:1</td><td class="pass">AA</td></tr>
+                <tr><td>#faa21b</td><td>#f6f6f6</td><td>Nunca fazer isto</td><td>1.90:1</td><td class="fail">Reprova</td></tr>
+                <tr><td>#faa21b</td><td>#ffffff</td><td>Nunca fazer isto</td><td>2.05:1</td><td class="fail">Reprova</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <aside class="usage-panel">
+            <h3>Heurística de cor</h3>
+            <div class="spec-row"><span>Ouro</span><strong>Kicker, CTA primário, uma palavra do H1, hover, filete de destaque. Nunca texto corrido.</strong></div>
+            <div class="spec-row"><span>Tinta</span><strong>Fundo e superfície. A escada tem matiz único, sem viés azul. Cinza azulado vira SaaS.</strong></div>
+            <div class="spec-row"><span>Branco</span><strong>Sobre escuro a hierarquia é branco rebaixado: 100% · 72% · 44% · 26%. Nunca cinza sólido.</strong></div>
+            <div class="spec-row"><span>Vermelho</span><strong>Só erro de formulário. Nunca decorativo.</strong></div>
+            <div class="spec-row"><span>Verde</span><strong>Só confirmação de envio. Nunca decorativo.</strong></div>
+            <div class="spec-row"><span>Proibido</span><strong>Glow radial, gradiente de marca, segunda cor de acento, roxo.</strong></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============================================ 03 TIPO -->
+      <section id="type" class="section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">03 Tipo</span>
+            <h2>Uma família. Peso faz o trabalho.</h2>
+          </div>
+          <p>DM Sans em prosa e título, IBM Plex Mono em dado tabular e metadado. Mono existe para a tabela KT e para o microtexto do hero, não para enfeite.</p>
+        </header>
+
+        <div class="type-layout reveal">
+          <div class="type-samples">
+            <article>
+              <span class="meta">Display · DM Sans 700 · tracking -0.02em</span>
+              <p class="sample-display">A correia certa, no prazo que você prometeu.</p>
+            </article>
+            <article>
+              <span class="meta">Corpo · DM Sans 500 · 16px</span>
+              <p class="sample-ui">Estoque em linha e expedição das unidades de Ibiporã e Várzea Grande. Você cuida do seu cliente, a Kauthec cuida da retaguarda.</p>
+            </article>
+            <article>
+              <span class="meta">Mono · IBM Plex Mono 400</span>
+              <p class="sample-mono">KT 220/3L x 3/8 x 1/8 · 350 mm · NBR</p>
+            </article>
+            <article>
+              <span class="meta">Rampa de peso</span>
+              <div class="weight-ramp">
+                <b class="w-400">Correia em V<i>400 regular</i></b>
+                <b class="w-500">Correia em V<i>500 corpo</i></b>
+                <b class="w-600">Correia em V<i>600 subtítulo</i></b>
+                <b class="w-700">Correia em V<i>700 título</i></b>
+                <b class="w-900">+10.000<i>900 número</i></b>
+              </div>
+            </article>
+          </div>
+
+          <aside class="usage-panel">
+            <h3>Escala</h3>
+            <div class="spec-row"><span>Display</span><strong>clamp(44px, 7vw, 96px) · peso 700 · tracking -0.02em · leading 0.98</strong></div>
+            <div class="spec-row"><span>H2</span><strong>clamp(34px, 4.4vw, 62px) · peso 700</strong></div>
+            <div class="spec-row"><span>H3</span><strong>20px · peso 600</strong></div>
+            <div class="spec-row"><span>Corpo</span><strong>16px · peso 500 · leading 1.6</strong></div>
+            <div class="spec-row"><span>Label</span><strong>14px · peso 500</strong></div>
+            <div class="spec-row"><span>Meta</span><strong>12px mono · caixa alta · tracking 0.12em</strong></div>
+            <div class="spec-row"><span>Nunca</span><strong>Corpo abaixo de 16px. O parceiro tem 40+ e lê spec no celular, no pátio da revenda.</strong></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============================================ 04 UI -->
+      <section id="components" class="section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">04 UI</span>
+            <h2>Peça com todos os estados.</h2>
+          </div>
+          <p>Nenhum componente entra no build sem default, hover, foco, desabilitado, carregando, vazio e erro. O card de produto é uma ficha de spec, não um card de blog.</p>
+        </header>
+
+        <div class="component-layout reveal">
+          <div class="component-stack">
+            <div class="control-row">
+              <button class="btn primary" type="button">Quero ser parceiro <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+              <button class="btn secondary" type="button">Falar no WhatsApp <svg aria-hidden="true"><use href="#i-whatsapp"/></svg></button>
+              <button class="btn tertiary" type="button">Ver especificações</button>
+              <button class="btn primary" type="button" disabled>Enviando</button>
+            </div>
+
+            <form class="form-demo" onsubmit="return false">
+              <label>
+                <span>Nome</span>
+                <input type="text" placeholder="Seu nome completo" />
+              </label>
+              <label>
+                <span>CNPJ</span>
+                <input type="text" placeholder="00.000.000/0000-00" inputmode="numeric" />
+              </label>
+              <label class="has-error">
+                <span>Contrato social</span>
+                <input type="text" value="contrato-social.docx" />
+                <small>Formato não aceito. Envie PDF, JPG ou PNG.</small>
+              </label>
+            </form>
+
+            <div class="state-grid">
+              <article class="state-card">
+                <span class="skeleton" aria-hidden="true"></span>
+                <strong>Carregando</strong>
+                <p>Esqueleto com a forma do conteúdo final. Spinner é proibido.</p>
+              </article>
+              <article class="state-card">
+                <svg aria-hidden="true"><use href="#i-image"/></svg>
+                <strong>Vazio</strong>
+                <p>Diz o que falta e dá uma ação. Nunca uma ilustração triste.</p>
+              </article>
+              <article class="state-card error">
+                <svg aria-hidden="true"><use href="#i-x"/></svg>
+                <strong>Erro</strong>
+                <p>Diz o que falhou e como sair. Sem faixa vermelha vaga.</p>
+              </article>
+            </div>
+
+            <article class="spec-card flagship">
+              <span class="flag">Carro-chefe</span>
+              <h3>Correia em V</h3>
+              <p>Transmissão industrial e agrícola. Lisas, dentadas e sextavadas.</p>
+              <dl>
+                <div><dt>Normas</dt><dd>NBR · DIN · RMA</dd></div>
+                <div><dt>Aplicação</dt><dd>Transmissão de potência</dd></div>
+                <div><dt>Estoque</dt><dd>Linha completa, PR e MT</dd></div>
+              </dl>
+              <button class="btn primary" type="button">Quero revender esta linha <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+            </article>
+          </div>
+
+          <aside class="brandos-preview">
+            <div class="preview-head">
+              <div>
+                <span class="eyebrow flush">Preview do site</span>
+                <h3>Home Kauthec</h3>
+              </div>
+              <span class="badge">v1</span>
+            </div>
+            <div class="metric-row">
+              <div><span>Seções</span><strong>11</strong></div>
+              <div><span>Páginas</span><strong>4</strong></div>
+              <div><span>Pendências</span><strong>15</strong></div>
+            </div>
+            <div class="asset-list">
+              <div><svg aria-hidden="true"><use href="#i-file-text"/></svg><strong>03-copy-final.md</strong><span>copy</span></div>
+              <div><svg aria-hidden="true"><use href="#i-file-text"/></svg><strong>DESIGN.md</strong><span>runtime</span></div>
+              <div><svg aria-hidden="true"><use href="#i-file-text"/></svg><strong>tokens.css</strong><span>token</span></div>
+              <div><svg aria-hidden="true"><use href="#i-image"/></svg><strong>assets/</strong><span>vazio</span></div>
+            </div>
+            <div class="usage-panel panel-flush">
+              <div class="spec-row"><span>Botão</span><strong>Não levita no hover. Massa industrial não flutua: o feedback é a cor.</strong></div>
+              <div class="spec-row"><span>Card</span><strong>Sem gap entre células. A borda compartilhada vira a malha.</strong></div>
+              <div class="spec-row"><span>Foco</span><strong>Contorno ouro de 2px, offset 2px. Visível em teclado, sempre.</strong></div>
+              <div class="spec-row"><span>Toque</span><strong>Altura mínima 48px. Luva de trabalho, dedo grosso, tela suja.</strong></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============================================ 05 MOTION -->
+      <section id="motion" class="section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">05 Motion</span>
+            <h2>Movimento com função.</h2>
+          </div>
+          <p>Uma curva, duas durações. Tudo atrás de prefers-reduced-motion. Se o movimento não revela hierarquia nem confirma ação, é dívida.</p>
+        </header>
+
+        <div class="motion-toolbar reveal">
+          <button class="btn primary" id="replayMotion" type="button"><svg aria-hidden="true"><use href="#i-play"/></svg> Repetir</button>
+          <span class="meta">450ms base · 200ms micro · cubic-bezier(.44, 0, .56, 1)</span>
+        </div>
+
+        <div class="motion-lab reveal" id="motionLab">
+          <article class="motion-demo">
+            <span class="meta">Micro-interação</span>
+            <button class="press-button" type="button">Quero ser parceiro <svg aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+            <p>Hover troca a cor, active comprime 2%. Não levita. 200ms.</p>
+          </article>
+          <article class="motion-demo">
+            <span class="meta">Scroll reveal</span>
+            <div class="mini-stack" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p>Por bloco, não por elemento. Opacidade + translateY(16px), stagger de 90ms. Dispara uma vez.</p>
+          </article>
+          <article class="motion-demo">
+            <span class="meta">Só no H1</span>
+            <div class="word-demo" aria-hidden="true"><span>Industrial.</span><span>E</span><span>no</span><span>prazo.</span></div>
+            <p>Palavra por palavra, uma vez, só no hero e no CTA final. Os dois momentos de pico.</p>
+          </article>
+        </div>
+
+        <div class="anti-list reveal">
+          <span>Nunca transition: all</span>
+          <span>Nunca animar width ou height</span>
+          <span>Nunca parallax pesado</span>
+          <span>Nunca loop infinito</span>
+          <span>Nunca WebGL</span>
+          <span>Nunca glow radial</span>
+          <span>Nunca botão que levita</span>
+          <span>Nunca contador que sobe duas vezes</span>
+        </div>
+      </section>
+
+      <!-- ============================================ 06 ÍCONES -->
+      <section id="icons" class="section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">06 Ícones</span>
+            <h2>Terminal quadrado, junta em esquadria.</h2>
+          </div>
+          <p>Base Lucide para UI funcional, customizada: stroke-linecap square, stroke-linejoin miter. Ponta arredondada contradiz radius 0. Os dez de baixo são desenhados para a Kauthec.</p>
+        </header>
+
+        <div class="icon-layout reveal">
+          <article class="icon-library">
+            <div class="library-head">
+              <span class="eyebrow">Biblioteca</span>
+              <h3>Um idioma de ícone. Stroke 1.75.</h3>
+            </div>
+            <div class="lucide-grid">
+              <span><svg aria-hidden="true"><use href="#i-arrow-right"/></svg>ArrowRight</span>
+              <span><svg aria-hidden="true"><use href="#i-check"/></svg>Check</span>
+              <span><svg aria-hidden="true"><use href="#i-x"/></svg>X</span>
+              <span><svg aria-hidden="true"><use href="#i-search"/></svg>Search</span>
+              <span><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy</span>
+              <span><svg aria-hidden="true"><use href="#i-upload"/></svg>Upload</span>
+              <span><svg aria-hidden="true"><use href="#i-download"/></svg>Download</span>
+              <span><svg aria-hidden="true"><use href="#i-external-link"/></svg>ExternalLink</span>
+              <span><svg aria-hidden="true"><use href="#i-play"/></svg>Play</span>
+              <span><svg aria-hidden="true"><use href="#i-file-text"/></svg>FileText</span>
+              <span><svg aria-hidden="true"><use href="#i-image"/></svg>Image</span>
+              <span><svg aria-hidden="true"><use href="#i-map-pin"/></svg>MapPin</span>
+
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-belt-v"/></svg>CorreiaV</span>
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-conveyor"/></svg>Transportadora</span>
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-rubber-sheet"/></svg>Lençol</span>
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-delivery"/></svg>Prazo</span>
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-stock"/></svg>Estoque</span>
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-certificate"/></svg>Laudo</span>
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-partnership"/></svg>Parceria</span>
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-calculator"/></svg>Calculadora</span>
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</span>
+              <span class="bespoke"><svg aria-hidden="true"><use href="#i-factory"/></svg>Indústria</span>
+            </div>
+          </article>
+
+          <aside class="usage-panel">
+            <h3>Regra de ícone</h3>
+            <div class="spec-row"><span>Stroke</span><strong>1.75px, currentColor. Nunca fill em ícone de UI.</strong></div>
+            <div class="spec-row"><span>Terminal</span><strong>square + miter. É a customização que amarra o ícone ao radius 0.</strong></div>
+            <div class="spec-row"><span>Tamanho</span><strong>18px em UI. 24px em card. 32px em pilar de diferencial.</strong></div>
+            <div class="spec-row"><span>Cor</span><strong>Ouro em destaque, branco 72% em uso corrido.</strong></div>
+            <div class="spec-row"><span>Bespoke</span><strong>CorreiaV, Transportadora, Lençol, Prazo, Estoque, Laudo, Parceria, Calculadora, WhatsApp, Indústria.</strong></div>
+            <div class="spec-row"><span>Nunca</span><strong>Emoji. Ícone colorido. Duas famílias de ícone. Ícone decorativo sem rótulo.</strong></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============================================ 07 ASSETS -->
+      <section id="assets" class="section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">07 Assets</span>
+            <h2>O buraco do projeto.</h2>
+          </div>
+          <p>As três referências dependem de foto industrial forte. A Kauthec não tinha nenhuma. Nove foram geradas, o logo foi recuperado, e sobrou uma foto real: a fachada. Total de 444 KB.</p>
+        </header>
+
+        <div class="asset-layout reveal">
+          <div class="media-grid">
+            <article class="media-slot done">
+              <span>Pronto · hero</span>
+              <h3>Expedição, não estoque</h3>
+              <p><code>hero-expedicao.webp</code> · 57 KB. Doca ao amanhecer, empilhadeira levando a bobina para o caminhão. Diz prazo, não volume.</p>
+            </article>
+            <article class="media-slot done">
+              <span>Pronto · cinco linhas</span>
+              <h3>Silhueta antes do título</h3>
+              <p>Toro, cilindro, planos empilhados, cilindro com taliscas, plano. O parceiro reconhece a linha antes de ler. Mesma câmera, mesma luz, mesmo fundo.</p>
+            </article>
+            <article class="media-slot done">
+              <span>Pronto · logo</span>
+              <h3>Recolorível por CSS</h3>
+              <p>O wordmark sempre foi vetor limpo. O emblema, traçado de bitmap, virou 3 paths por família de cor. <code>--logo-ink</code>, <code>--logo-light</code>, <code>--logo-gold</code>.</p>
+            </article>
+            <article class="media-slot missing">
+              <span>Faltando · foto real</span>
+              <h3>Só a fachada é a Kauthec</h3>
+              <p>Todo o resto é imagem de categoria: boa para o v1 ir ao ar, ruim para sustentar um "sobre nós" honesto. Ensaio em Ibiporã e Várzea Grande resolve.</p>
+            </article>
+          </div>
+
+          <aside class="usage-panel">
+            <h3>Direção de foto</h3>
+            <div class="spec-row"><span>Luz</span><strong>Rasante, quente, uma fonte. Sombra dura. Nunca luz de estúdio chapada.</strong></div>
+            <div class="spec-row"><span>Cor</span><strong>Dessaturada, quase monocromática. O ouro entra pela luz, não pelo filtro.</strong></div>
+            <div class="spec-row"><span>Enquadramento</span><strong>Macro na textura, wide na escala. Nada de plano médio genérico.</strong></div>
+            <div class="spec-row"><span>Pessoas</span><strong>Mãos e EPI, nunca rosto sorrindo para a câmera. Stock de reunião é proibido.</strong></div>
+            <div class="spec-row"><span>Tratamento</span><strong>Overlay #101011 a 55% sob a malha de fios. Texto sempre sobre a parte escura.</strong></div>
+            <div class="spec-row"><span>Formato</span><strong>WebP, hero abaixo de 200KB, loading lazy fora da dobra.</strong></div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ============================================ 08 QA -->
+      <section id="quality" class="section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">08 QA</span>
+            <h2>Portão antes da aprovação.</h2>
+          </div>
+          <p>A lista que impede o build de derivar. Se um item falha, o site não vai ao ar.</p>
+        </header>
+
+        <div class="quality-grid reveal">
+          <article>
+            <span>Acessibilidade</span>
+            <strong>Contraste verificado por par, foco visível, navegação por teclado, reduced-motion</strong>
+            <em>Texto 4.5:1 · UI 3:1 · toque 48px</em>
+          </article>
+          <article>
+            <span>Responsivo</span>
+            <strong>Mobile-first a partir de 375px. A malha do hero some abaixo de 680px</strong>
+            <em>375 · 680 · 980 · 1180 · 1440</em>
+          </article>
+          <article>
+            <span>Microcopy</span>
+            <strong>Palavra proibida quebra o build: inovador, disruptivo, soluções, empoderador, bem-vindo</strong>
+            <em>Zero em-dash. CTA sempre específico</em>
+          </article>
+          <article>
+            <span>Estados</span>
+            <strong>Carregando, vazio, erro, sucesso, desabilitado. Esqueleto no lugar de spinner</strong>
+            <em>Upload precisa de estado de progresso</em>
+          </article>
+          <article>
+            <span>Performance</span>
+            <strong>Tailwind CDN só em dev. Build gera CSS enxuto antes de subir</strong>
+            <em>1.5MB página · 200KB hero · 100KB JS</em>
+          </article>
+          <article>
+            <span>SEO</span>
+            <strong>Um H1 por página, title e description por rota, OG, LocalBusiness schema com as duas unidades</strong>
+            <em>OG 1200x630 · description 150-160</em>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================ 09 AI GEN -->
+      <section id="ai-gen" class="section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">09 AI Gen</span>
+            <h2>Prompt por imagem-chave.</h2>
+          </div>
+          <p>Agnóstico de ferramenta. Serve para Midjourney, Flux, Magnific ou fotógrafo. Sem texto renderizado na imagem, sem logo falso, sem rosto sorrindo. Os quatro abaixo já foram gerados e estão em <code>assets/images/</code>.</p>
+        </header>
+
+        <div class="prompt-bank reveal">
+          <article>
+            <span class="meta">Hero · expedição · Recraft V4.1 · 16:9</span>
+            <p>industrial loading dock at dawn, heavy rubber conveyor belt rolls stacked on wooden pallets, forklift caught mid-motion carrying one roll toward an open truck trailer, warm low-angle sunlight raking across textured rubber from a single source, long hard shadows on concrete, deeply desaturated near-monochrome black graphite and concrete grey, one amber light source as the only warm colour, cinematic wide shot, shallow depth of field, atmospheric dust, documentary industrial photography, natural grain, no text, no logos, no signage, no faces</p>
+          </article>
+          <article>
+            <span class="meta">Produto · correia em V · Nano Banana Pro · 4:3</span>
+            <p>macro studio photograph of a classic industrial V-belt for power transmission, cut so the camera sees the cross-section head on: a trapezoid, wide flat top, two smooth sidewalls angling inward and downward to a narrower flat bottom, about 40 degrees between the sidewalls; pale polyester tensile cords in a single horizontal row near the top of the section; black rubber body, fine woven fabric cover outside; sidewalls perfectly smooth, NOT a toothed belt, NOT a timing belt, no cogs, no notches, no ribs; belt curves away into shallow depth of field, hard raking sidelight, single warm amber rim light on one edge, near-black empty background, sharp focus on the cut cross-section, no text, no logos, no hands</p>
+          </article>
+          <article>
+            <span class="meta">Aplicação · agroindústria · Recraft V4.1 · 3:2</span>
+            <p>interior of a grain elevator, bucket elevator belt in motion carrying soybeans upward, grain spilling and falling, thick dust particles suspended in a single hard shaft of warm amber light cutting through dark steel structure, everything else deep shadow, desaturated graphite and black, wide documentary shot, natural motion blur on falling grain, cinematic, no text, no logos, no signage, no faces</p>
+          </article>
+          <article>
+            <span class="meta">Textura · substrato · Recraft V4.1 · 1:1</span>
+            <p>extreme macro of a black industrial rubber conveyor belt surface, subtle diagonal woven fabric pattern beneath a matte rubber finish, faint surface abrasion, flat uniform low-key lighting, no highlights, no hotspots, seamless tileable texture, near-black, very low contrast, almost abstract, fills the frame edge to edge, no text, no objects, no depth of field</p>
+          </article>
+        </div>
+
+        <div class="module-grid reveal stack-gap" aria-label="O que aprendemos gerando">
+          <article>
+            <span>Lição · geometria</span>
+            <strong>"V-belt cross section" sozinho não funciona. O modelo devolve vedação de borracha ou correia dentada. Foi preciso escrever o trapézio: topo largo, paredes a 40 graus, base estreita, cordonéis em fileira única perto do topo.</strong>
+          </article>
+          <article>
+            <span>Lição · negação</span>
+            <strong>Negar em caixa alta o produto errado ("NOT a toothed belt, no cogs, no notches") mudou o resultado mais que qualquer adjetivo de luz.</strong>
+          </article>
+          <article>
+            <span>Lição · modelo</span>
+            <strong>Recraft acerta a paleta (quase-preto, rim light âmbar) e erra a engenharia. Nano Banana Pro acerta a engenharia e clareia a paleta. Produto técnico vai de Nano Banana, cena vai de Recraft.</strong>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================ 10 OS -->
+      <section id="os" class="section final-section">
+        <header class="section-header reveal">
+          <div>
+            <span class="eyebrow">10 OS</span>
+            <h2>O sistema operacional da marca.</h2>
+          </div>
+          <p>Quando este showcase for aprovado, qualquer agente que vá escrever UI começa por llms.txt. Não por screenshot, não por prosa.</p>
+        </header>
+
+        <div class="brandos-map reveal">
+          <article><span>llms.txt</span><strong>Índice de navegação. Primeira leitura obrigatória de qualquer agente.</strong></article>
+          <article><span>tokens.css</span><strong>Camada fechada. Componente usa alias semântico, nunca primitivo.</strong></article>
+          <article><span>DESIGN.md</span><strong>Briefing de runtime: motion, a11y, microcopy, estados, perf, SEO.</strong></article>
+          <article><span>specs/</span><strong>Anatomia, estados e tokens de cada componente que existe de fato.</strong></article>
+          <article><span>token-audit.js</span><strong>Sai com código 1 se achar hex, px, radius ou duração chumbados.</strong></article>
+          <article><span>showcase.html</span><strong>Fonte visual. Muda aqui, regenera o resto. Nunca o contrário.</strong></article>
+        </div>
+
+        <div class="module-grid reveal stack-gap">
+          <article><span>Anti-genérico</span><strong>Sem glow roxo, sem mosaico de card, sem pílula, sem sombra padrão do Tailwind, sem stock de reunião.</strong></article>
+          <article><span>Von Restorff</span><strong>Prazo e Correia em V são os dois únicos elementos que quebram o padrão visual da página.</strong></article>
+          <article><span>Peak-End</span><strong>Hero e CTA final recebem o H1 grande e a animação de palavra. O resto é sóbrio.</strong></article>
+          <article><span>Hick</span><strong>Um CTA primário por seção. Sempre "Quero ser parceiro".</strong></article>
+          <article><span>Miller</span><strong>Máximo 5 a 7 itens em qualquer lista. Cinco linhas de produto, cinco pilares.</strong></article>
+          <article><span>Fase 2</span><strong>Área do Revendedor, Central de Marketing, ERP Sênior. Ganchos, sem tela.</strong></article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./showcase.js"></script>
+</body>
+</html>

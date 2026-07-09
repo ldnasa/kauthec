@@ -1,0 +1,237 @@
+/* ============================================================
+   Kauthec do Brasil - Design System
+   Industrial Kauthec v1
+   ------------------------------------------------------------
+   Camada de token fechada. Componentes usam SOMENTE os aliases
+   semanticos da Layer 2. Hex, px, radius, sombra, duracao e
+   z-index soltos em componente sao falha de auditoria.
+
+   Layer 1  primitivos       --kt-*
+   Layer 2  aliases          --color-*  --font-*  --text-*  --space-*
+   Layer 3  componentes      specs/components/*.md
+
+   Gerado a partir de refs/00-analise-referencias.md
+   Fonte visual: design_system/showcase.html
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   LAYER 1 - PRIMITIVOS
+   Nunca referenciados direto em componente.
+   ------------------------------------------------------------ */
+:root {
+  /* Ouro da marca. #faa21b vem do logo, nao de referencia. */
+  --kt-gold-100: #fff3dd;
+  --kt-gold-300: #ffc861;
+  --kt-gold-500: #faa21b;
+  --kt-gold-600: #e08f12;
+  --kt-gold-700: #b87109;
+  --kt-gold-900: #8a5a00;
+
+  /* Escada de tinta. Matiz unico, sem viés azul. */
+  --kt-ink-1000: #070707;
+  --kt-ink-950: #101011;
+  --kt-ink-900: #1b1b1b;
+  --kt-ink-800: #232323;
+  --kt-ink-700: #2e2e2e;
+
+  --kt-gray-600: #666666;
+  --kt-gray-500: #9e9e9e;
+  --kt-gray-300: #d1d1d1;
+  --kt-gray-200: #e4e4e4;
+  --kt-gray-100: #f6f6f6;
+  --kt-white: #ffffff;
+
+  /* Funcionais. Nunca decorativos. */
+  --kt-danger-500: #e5484d;
+  --kt-success-500: #46a758;
+  --kt-whatsapp-500: #25d366;
+  --kt-whatsapp-600: #1ebe5d;
+
+  /* --------------------------------------------------------
+     LAYER 2 - TIPOGRAFIA
+     Uma familia de prosa, pesos fazem o trabalho.
+     Mono existe para dado tabular e metadado, nao para enfeite.
+     -------------------------------------------------------- */
+  --font-display: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ui: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-2xs: 0.75rem;   /* 12px - so metadado mono */
+  --text-xs: 0.875rem;   /* 14px - label, caption */
+  --text-sm: 1rem;       /* 16px - CORPO. Nao descer daqui. */
+  --text-base: 1.125rem; /* 18px - lead curto */
+  --text-md: 1.25rem;    /* 20px */
+  --text-lg: 1.5rem;     /* 24px */
+  --text-xl: 1.875rem;   /* 30px */
+  --text-2xl: 2.25rem;   /* 36px */
+  --text-3xl: 2.75rem;   /* 44px */
+  --text-4xl: 4.5rem;    /* 72px */
+
+  --text-display: clamp(2.75rem, 7vw, 6rem);
+  --text-h2: clamp(2.125rem, 4.4vw, 3.875rem);
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  --leading-display: 0.98;
+  --leading-heading: 1.1;
+  --leading-body: 1.6;
+
+  --tracking-display: -0.02em;
+  --tracking-body: 0;
+  --tracking-meta: 0.12em;
+
+  /* --------------------------------------------------------
+     LAYER 2 - ESPACO E RITMO
+     Escada 4/8/16/24/40/64/96. O 40 e o passo dominante,
+     herdado do machin.
+     -------------------------------------------------------- */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 1rem;     /* 16px */
+  --space-4: 1.5rem;   /* 24px */
+  --space-5: 2.5rem;   /* 40px */
+  --space-6: 4rem;     /* 64px */
+  --space-7: 6rem;     /* 96px */
+
+  --content-max: 1440px;
+  --section-x: clamp(1.5rem, 5vw, 5rem);
+  --section-y: clamp(5rem, 9vw, 10rem); /* 80px -> 160px */
+  --sidebar: 260px;
+  --grid-edge: max(var(--section-x), calc((100vw - var(--content-max)) / 2));
+
+  /* --------------------------------------------------------
+     LAYER 2 - FORMA
+     Zero e zero. Correia, chapa e lamina nao tem canto redondo.
+     Os aliases existem para o audit conseguir apontar o token
+     certo quando alguem escrever border-radius: 8px.
+     -------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-full: 0;
+
+  --border-width: 1px;
+  --border-width-strong: 2px;
+
+  /* --------------------------------------------------------
+     LAYER 2 - MOVIMENTO
+     ease-standard e simetrico: acelera e desacelera igual.
+     Sensacao de massa. Vem do machin e do manufact, os dois.
+     ease-exit e para micro-interacao: sai rapido, chega macio.
+     -------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.44, 0, 0.56, 1);
+  --ease-exit: cubic-bezier(0.12, 0.23, 0.5, 1);
+
+  --dur-micro: 200ms;
+  --dur-base: 450ms;
+  --dur-slow: 700ms;
+  --dur-shimmer: 1700ms; /* loop do esqueleto de carregamento */
+
+  --stagger: 90ms;
+
+  /* --------------------------------------------------------
+     LAYER 2 - CAMADA
+     -------------------------------------------------------- */
+  --z-behind: -1;  /* substrato de malha no body::before */
+  --z-base: 0;
+  --z-hairline: 1;
+  --z-sticky: 10;
+  --z-header: 20;
+  --z-float: 30;   /* botao flutuante de WhatsApp */
+  --z-modal: 40;
+}
+
+/* ------------------------------------------------------------
+   LAYER 2 - COR SEMANTICA | TEMA ESCURO (padrao)
+   Hierarquia de texto sobre escuro e feita com BRANCO REBAIXADO,
+   nunca com cinza solido. Cinza solido sobre preto morre.
+   ------------------------------------------------------------ */
+:root,
+.theme-dark {
+  --color-bg: var(--kt-ink-950);
+  --color-surface: var(--kt-ink-900);
+  --color-surface-raised: var(--kt-ink-800);
+
+  --color-text: var(--kt-white);
+  --color-text-secondary: rgba(255, 255, 255, 0.72);
+  --color-text-tertiary: rgba(255, 255, 255, 0.44);
+  --color-text-muted: rgba(255, 255, 255, 0.26);
+
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.15);
+  --color-border-strong: rgba(255, 255, 255, 0.28);
+
+  /* O fio de cabelo da malha tecnica. O gesto central do sistema. */
+  --color-hairline: rgba(255, 255, 255, 0.15);
+
+  --color-accent: var(--kt-gold-500);
+  --color-accent-hover: var(--kt-gold-300);
+  --color-accent-text: var(--kt-gold-500);   /* 9.29:1 sobre --color-bg */
+  --color-on-accent: var(--kt-ink-1000);     /* 9.83:1 sobre o ouro */
+  --color-accent-wash: rgba(250, 162, 27, 0.1);
+  --color-accent-veil: rgba(250, 162, 27, 0.2);
+
+  --color-danger: var(--kt-danger-500);
+  --color-success: var(--kt-success-500);
+  --color-whatsapp: var(--kt-whatsapp-500);
+  --color-whatsapp-hover: var(--kt-whatsapp-600);
+  --color-on-whatsapp: var(--kt-ink-1000);
+
+  --shadow-none: none;
+  --shadow-card: 0 20px 40px -30px rgba(0, 0, 0, 0.75);
+  --shadow-lift: 0 28px 56px -34px rgba(0, 0, 0, 0.85);
+
+  color-scheme: dark;
+}
+
+/* ------------------------------------------------------------
+   LAYER 2 - COR SEMANTICA | TEMA CLARO
+   Nao e o escuro invertido. Reconstruido para contraste.
+
+   REGRA DURA: no tema claro o ouro NUNCA e cor de texto.
+   #faa21b sobre #f6f6f6 da 1.90:1 e reprova ate para texto
+   grande (minimo 3:1). Ouro claro so existe como PREENCHIMENTO, com
+   --color-on-accent por cima. Para texto em ouro use
+   --color-accent-text, que e --kt-gold-900 (5.49:1).
+   ------------------------------------------------------------ */
+.theme-light {
+  --color-bg: var(--kt-gray-100);
+  --color-surface: var(--kt-white);
+  --color-surface-raised: var(--kt-white);
+
+  --color-text: var(--kt-ink-900);
+  --color-text-secondary: rgba(27, 27, 27, 0.72);
+  --color-text-tertiary: rgba(27, 27, 27, 0.5);
+  --color-text-muted: rgba(27, 27, 27, 0.34);
+
+  --color-border-subtle: rgba(27, 27, 27, 0.1);
+  --color-border: rgba(27, 27, 27, 0.16);
+  --color-border-strong: rgba(27, 27, 27, 0.28);
+
+  --color-hairline: rgba(27, 27, 27, 0.12);
+
+  --color-accent: var(--kt-gold-500);        /* preenchimento */
+  --color-accent-hover: var(--kt-gold-600);
+  --color-accent-text: var(--kt-gold-900);   /* texto: 5.49:1 */
+  --color-on-accent: var(--kt-ink-1000);
+  --color-accent-wash: rgba(250, 162, 27, 0.14);
+  --color-accent-veil: rgba(250, 162, 27, 0.28);
+
+  --color-danger: #c62a2f;
+  --color-success: #2c7a3d;
+  --color-whatsapp: var(--kt-whatsapp-500);
+  --color-whatsapp-hover: var(--kt-whatsapp-600);
+  --color-on-whatsapp: var(--kt-ink-1000);
+
+  --shadow-none: none;
+  --shadow-card: 0 20px 40px -34px rgba(27, 27, 27, 0.28);
+  --shadow-lift: 0 28px 56px -38px rgba(27, 27, 27, 0.36);
+
+  color-scheme: light;
+}

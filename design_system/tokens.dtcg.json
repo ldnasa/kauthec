@@ -1,0 +1,163 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Kauthec do Brasil - Industrial Kauthec v1. Export neutro DTCG. Layer 1 primitivo, Layer 2 alias semantico. Componentes referenciam apenas Layer 2.",
+
+  "kt": {
+    "$description": "Layer 1. Primitivos. Nunca referenciados direto em componente.",
+    "gold": {
+      "$type": "color",
+      "100": { "$value": "#fff3dd" },
+      "300": { "$value": "#ffc861", "$description": "Hover do acento em tema escuro" },
+      "500": { "$value": "#faa21b", "$description": "Ouro da marca. Vem do logo, nao de referencia." },
+      "600": { "$value": "#e08f12", "$description": "Hover do acento em tema claro" },
+      "700": { "$value": "#b87109" },
+      "900": { "$value": "#8a5a00", "$description": "Unico ouro legivel como texto sobre fundo claro. 5.49:1 sobre #f6f6f6." }
+    },
+    "ink": {
+      "$type": "color",
+      "1000": { "$value": "#070707", "$description": "Preto do logo. Texto sobre o ouro." },
+      "950": { "$value": "#101011", "$description": "Fundo do tema escuro" },
+      "900": { "$value": "#1b1b1b" },
+      "800": { "$value": "#232323" },
+      "700": { "$value": "#2e2e2e" }
+    },
+    "gray": {
+      "$type": "color",
+      "$description": "Escada de matiz unico. Sem vies azul: cinza azulado vira SaaS.",
+      "600": { "$value": "#666666" },
+      "500": { "$value": "#9e9e9e" },
+      "300": { "$value": "#d1d1d1" },
+      "200": { "$value": "#e4e4e4" },
+      "100": { "$value": "#f6f6f6" }
+    },
+    "white": { "$type": "color", "$value": "#ffffff" },
+    "danger": { "$type": "color", "$value": "#e5484d", "$description": "Funcional. So erro de formulario." },
+    "success": { "$type": "color", "$value": "#46a758", "$description": "Funcional. So confirmacao de envio." }
+  },
+
+  "color": {
+    "$description": "Layer 2. Aliases semanticos, modo escuro. O modo claro vive em tokens.css sob .theme-light.",
+    "$type": "color",
+    "bg": { "$value": "{kt.ink.950}" },
+    "surface": { "$value": "{kt.ink.900}" },
+    "surface-raised": { "$value": "{kt.ink.800}" },
+    "text": { "$value": "{kt.white}" },
+    "text-secondary": { "$value": "rgba(255,255,255,0.72)", "$description": "Hierarquia sobre escuro e branco rebaixado, nunca cinza solido" },
+    "text-tertiary": { "$value": "rgba(255,255,255,0.44)" },
+    "text-muted": { "$value": "rgba(255,255,255,0.26)" },
+    "border-subtle": { "$value": "rgba(255,255,255,0.08)" },
+    "border": { "$value": "rgba(255,255,255,0.15)" },
+    "border-strong": { "$value": "rgba(255,255,255,0.28)" },
+    "hairline": { "$value": "rgba(255,255,255,0.15)", "$description": "O fio da malha tecnica. Gesto central do sistema." },
+    "accent": { "$value": "{kt.gold.500}", "$description": "Evento: kicker, CTA, uma palavra do H1, hover, filete. Nunca texto corrido nem fundo de secao." },
+    "accent-hover": { "$value": "{kt.gold.300}" },
+    "accent-text": { "$value": "{kt.gold.500}", "$description": "No tema claro este alias vira {kt.gold.900}. O ouro puro reprova sobre claro." },
+    "on-accent": { "$value": "{kt.ink.1000}" },
+    "accent-wash": { "$value": "rgba(250,162,27,0.10)" },
+    "accent-veil": { "$value": "rgba(250,162,27,0.20)" },
+    "danger": { "$value": "{kt.danger}" },
+    "success": { "$value": "{kt.success}" }
+  },
+
+  "font": {
+    "$type": "fontFamily",
+    "display": { "$value": ["DM Sans", "sans-serif"] },
+    "ui": { "$value": ["DM Sans", "sans-serif"] },
+    "mono": { "$value": ["IBM Plex Mono", "monospace"], "$description": "Dado tabular e metadado. Nunca prosa." }
+  },
+
+  "text": {
+    "$type": "dimension",
+    "2xs": { "$value": "0.75rem" },
+    "xs": { "$value": "0.875rem" },
+    "sm": { "$value": "1rem", "$description": "CORPO. Piso absoluto. Publico 40+ lendo spec no celular." },
+    "base": { "$value": "1.125rem" },
+    "md": { "$value": "1.25rem" },
+    "lg": { "$value": "1.5rem" },
+    "xl": { "$value": "1.875rem" },
+    "2xl": { "$value": "2.25rem" },
+    "3xl": { "$value": "2.75rem" },
+    "4xl": { "$value": "4.5rem" }
+  },
+
+  "weight": {
+    "$type": "fontWeight",
+    "regular": { "$value": 400 },
+    "medium": { "$value": 500, "$description": "Peso de corpo. As duas refs industriais usam 500 dominante." },
+    "semibold": { "$value": 600 },
+    "bold": { "$value": 700, "$description": "Titulo" },
+    "black": { "$value": 900, "$description": "So numero grande" }
+  },
+
+  "tracking": {
+    "$type": "dimension",
+    "display": { "$value": "-0.02em", "$description": "Sempre negativo em titulo. Nenhuma das tres refs usa tracking positivo em display." },
+    "body": { "$value": "0" },
+    "meta": { "$value": "0.12em" }
+  },
+
+  "space": {
+    "$type": "dimension",
+    "1": { "$value": "0.25rem" },
+    "2": { "$value": "0.5rem" },
+    "3": { "$value": "1rem" },
+    "4": { "$value": "1.5rem" },
+    "5": { "$value": "2.5rem", "$description": "Passo dominante, herdado do machin" },
+    "6": { "$value": "4rem" },
+    "7": { "$value": "6rem" }
+  },
+
+  "radius": {
+    "$type": "dimension",
+    "$description": "Zero e zero. Correia, chapa e lamina nao tem canto redondo. Os aliases existem para o audit apontar o token certo.",
+    "none": { "$value": "0" },
+    "sm": { "$value": "0" },
+    "md": { "$value": "0" },
+    "lg": { "$value": "0" },
+    "xl": { "$value": "0" },
+    "full": { "$value": "0" }
+  },
+
+  "border-width": {
+    "$type": "dimension",
+    "default": { "$value": "1px" },
+    "strong": { "$value": "2px" }
+  },
+
+  "ease": {
+    "$type": "cubicBezier",
+    "standard": { "$value": [0.44, 0, 0.56, 1], "$description": "Simetrica. Acelera e desacelera igual: sensacao de massa. machin e manufact usam esta." },
+    "exit": { "$value": [0.12, 0.23, 0.5, 1], "$description": "Micro-interacao. Sai rapido, chega macio. tilanium." }
+  },
+
+  "duration": {
+    "$type": "duration",
+    "micro": { "$value": "200ms" },
+    "base": { "$value": "450ms" },
+    "slow": { "$value": "700ms" },
+    "stagger": { "$value": "90ms" }
+  },
+
+  "shadow": {
+    "$type": "shadow",
+    "none": { "$value": "none" },
+    "card": { "$value": { "offsetX": "0", "offsetY": "20px", "blur": "40px", "spread": "-30px", "color": "rgba(0,0,0,0.75)" } },
+    "lift": { "$value": { "offsetX": "0", "offsetY": "28px", "blur": "56px", "spread": "-34px", "color": "rgba(0,0,0,0.85)" } }
+  },
+
+  "z": {
+    "$type": "number",
+    "base": { "$value": 0 },
+    "hairline": { "$value": 1 },
+    "sticky": { "$value": 10 },
+    "header": { "$value": 20 },
+    "float": { "$value": 30, "$description": "Botao flutuante de WhatsApp" },
+    "modal": { "$value": 40 }
+  },
+
+  "layout": {
+    "$type": "dimension",
+    "content-max": { "$value": "1440px" },
+    "section-y-max": { "$value": "10rem", "$description": "160px. O silencio entre secoes e o que comunica porte." }
+  }
+}

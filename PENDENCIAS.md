@@ -89,6 +89,7 @@ Substituir pela tabela real antes de publicar.
 | **⚑10** | Depoimentos e logos reais de parceiros | Não existe. A seção Prova Social foi **substituída** por um bloco de normas expandido. Depoimento placeholder em B2B industrial é pior que ausência |
 | **⚑5** | O vídeo institucional do YouTube ainda representa a empresa? | Seção Sobre. Hoje o slot é a foto da fachada. Se o vídeo servir, vira embed |
 | **⚑12** | As tabelas KT 140 / KT 220 e os tipos de cobertura ainda batem? | Página Produtos. Vieram do site antigo |
+| **⚑16** | Fichas técnicas em PDF por linha (5 arquivos) | Página Produtos, botão "Ficha técnica (PDF)" em cada linha. Arquivos ainda não existem. Convenção de nomes em `assets/docs/README.md`. Até chegarem, o link não resolve |
 | **⚑9** | Pode prometer a "central de marketing em breve"? | Pilar Suporte, benefício Suporte. Prometer cria expectativa com data |
 | **⚑1** | Horário de atendimento das duas unidades | Painel do WhatsApp, página Contato |
 | **⚑2** | CNPJ da matriz | Rodapé. Hoje diz "CNPJ a confirmar" |

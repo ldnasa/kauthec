@@ -370,6 +370,10 @@ p, li, summary, .stat__label { text-wrap: pretty; }
   max-width: 14ch;
 }
 
+/* Cabecalho de pagina interna: hero de texto puro.
+   Titulo menor que o hero da home para nao competir com ela. */
+.page-hero h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); max-width: 18ch; }
+
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-5); }
 .hero__actions .btn { flex: 1 1 auto; }
 @media (min-width: 30rem) { .hero__actions .btn { flex: 0 0 auto; } }
@@ -762,6 +766,141 @@ p, li, summary, .stat__label { text-wrap: pretty; }
   border-color: rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.08);
 }
+
+/* ============================================================ EXPLORADOR DE LINHAS
+   Master-detail: menu de linhas a esquerda, detalhe a direita.
+   Mobile: o menu vira um tablist horizontal rolavel acima do detalhe. */
+.explorer {
+  display: grid;
+  gap: var(--border-width);
+  background: var(--color-border-subtle);
+  border: var(--border-width) solid var(--color-border-subtle);
+}
+@media (min-width: 62rem) {
+  .explorer { grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); align-items: stretch; }
+}
+
+.explorer__menu {
+  display: flex;
+  gap: var(--border-width);
+  background: var(--color-border-subtle);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.explorer__menu::-webkit-scrollbar { display: none; }
+@media (min-width: 62rem) {
+  .explorer__menu { flex-direction: column; overflow: visible; }
+}
+
+.explorer__tab {
+  flex: 1 0 auto;
+  display: grid;
+  gap: var(--space-1);
+  align-content: center;
+  justify-items: start;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg);
+  border: 0;
+  border-bottom: var(--border-width-strong) solid transparent;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  transition: background var(--dur-micro) var(--ease-exit), color var(--dur-micro) var(--ease-exit);
+}
+@media (min-width: 62rem) {
+  .explorer__tab {
+    border-bottom: 0;
+    border-left: var(--border-width-strong) solid transparent;
+    white-space: normal;
+    min-height: 88px;
+    padding: var(--space-4);
+  }
+}
+.explorer__tab:hover { background: var(--color-accent-wash); color: var(--color-text); }
+.explorer__tab[aria-selected="true"] {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+@media (min-width: 62rem) {
+  .explorer__tab[aria-selected="true"] { border-bottom-color: transparent; border-left-color: var(--color-accent); }
+}
+.explorer__tab-name { font-weight: var(--weight-semibold); font-size: var(--text-sm); color: inherit; }
+.explorer__tab-flag {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--color-accent-text);
+}
+
+.explorer__stage { background: var(--color-bg); }
+.explorer__panel { padding: var(--space-5); }
+@media (min-width: 48rem) { .explorer__panel { padding: var(--space-6); } }
+
+/* Detalhe de uma linha */
+.linha { display: grid; gap: var(--space-6); }
+.linha__head { display: grid; gap: var(--space-5); align-items: start; }
+@media (min-width: 55rem) {
+  .linha__head { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr); gap: var(--space-6); }
+}
+.linha__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: var(--border-width) solid var(--color-border);
+  background: var(--color-surface);
+}
+.linha__media img { width: 100%; height: 100%; object-fit: cover; }
+.linha__flag {
+  position: absolute; top: 0; left: 0;
+  z-index: var(--z-hairline);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-meta);
+  padding: var(--space-1) var(--space-2);
+}
+.linha__intro { display: grid; gap: var(--space-3); align-content: start; }
+.linha__intro h2 { font-size: var(--text-xl); max-width: none; }
+.linha__intro p { max-width: none; font-size: var(--text-sm); }
+
+.linha__specs { display: grid; gap: 0; margin: 0; }
+.linha__spec {
+  display: grid;
+  grid-template-columns: minmax(96px, max-content) 1fr;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  border-top: var(--border-width) solid var(--color-border-subtle);
+}
+.linha__spec dt { font-family: var(--font-mono); font-size: var(--text-2xs); text-transform: uppercase; letter-spacing: var(--tracking-meta); color: var(--color-text-tertiary); }
+.linha__spec dd { margin: 0; font-size: var(--text-xs); color: var(--color-text); }
+
+.linha__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
+.linha__tables { display: grid; gap: var(--space-5); }
+.linha__tables h3 { font-size: var(--text-md); }
+
+/* Calculadora em destaque, dentro da linha PVC/PU */
+.linha__calc {
+  border: var(--border-width-strong) solid var(--color-accent);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-4);
+}
+.linha__calc-head { display: grid; gap: var(--space-2); }
+.linha__calc-head .badge {
+  justify-self: start;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-meta);
+  padding: var(--space-1) var(--space-2);
+}
+.linha__calc-head h3 { font-size: var(--text-lg); }
 
 /* ============================================================ LINHA DE PRODUTOS (A/B) */
 .products-section { position: relative; }

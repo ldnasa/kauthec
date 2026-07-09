@@ -61,6 +61,7 @@
     <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 21V10l6 4v-4l6 4V3h6v18z"/><path d="M7 21v-4"/><path d="M13 21v-4"/></symbol>
     <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
     <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 20h16"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></symbol>
     <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4V4z"/><path d="M8 8h8"/><path d="M8 12h5"/></symbol>
   </svg>
 
@@ -103,7 +104,7 @@
     </div>
   </header>
   <main id="main">
-    <section class="section">
+    <section class="section page-hero">
       <div class="container">
         <span class="eyebrow">Produtos</span>
         <h1>Cinco linhas de correia, prontas para <span class="hl">despachar</span>.</h1>
@@ -111,161 +112,264 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section--light theme-light">
       <div class="container">
-        <div class="grid-hairline cols-3 reveal">
-          <article class="product product--flagship">
-            <div class="product__thumb">
-              <span class="product__flag">Carro-chefe</span>
-              <img src="assets/images/linha-correia-v.webp" width="800" height="800" loading="lazy" alt="Correia de transmissão em V para uso industrial e agrícola">
-            </div>
-            <div class="product__body">
-              <h2>Correias em V</h2>
-              <p>Transmissão de potência para indústria e agro. Perfis lisos, dentados e sextavados. A linha que mais gira no estoque da Kauthec.</p>
-            </div>
-          </article>
-          <article class="product">
-            <div class="product__thumb"><img src="assets/images/linha-transportadora.webp" width="800" height="800" loading="lazy" alt="Correia transportadora de carcaça têxtil com cobertura de borracha"></div>
-            <div class="product__body">
-              <h2>Correias Transportadoras</h2>
-              <p>Carcaça em poliéster e nylon, com e sem cobertura de borracha. Para impacto, abrasão e granel pesado. Coberturas anti-óleo, antichama e antiestática.</p>
-            </div>
-          </article>
-          <article class="product">
-            <div class="product__thumb"><img src="assets/images/linha-pvc-pu.webp" width="800" height="800" loading="lazy" alt="Correia transportadora de PVC branca para linha de produção alimentícia"></div>
-            <div class="product__body">
-              <h2>Correias de PVC e PU</h2>
-              <p>Transporte leve, linha alimentícia e produção. Lisas, rugosas e com perfil. Calculadora de referência na própria página.</p>
-              <a class="product__cta" href="#calculadora">Abrir calculadora <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-            </div>
-          </article>
-          <article class="product">
-            <div class="product__thumb"><img src="assets/images/linha-laminada-elevadora.webp" width="800" height="800" loading="lazy" alt="Correia elevadora com taliscas para transporte vertical de grãos"></div>
-            <div class="product__body">
-              <h2>Correias Laminadas e Elevadoras</h2>
-              <p>Com e sem taliscas, lisas e corrugadas. Elevação de grãos, fertilizante e material a granel.</p>
-            </div>
-          </article>
-          <article class="product">
-            <div class="product__thumb"><img src="assets/images/linha-lencol-borracha.webp" width="800" height="800" loading="lazy" alt="Lençol de borracha para revestimento antiabrasivo de equipamentos"></div>
-            <div class="product__body">
-              <h2>Lençol de Borracha</h2>
-              <p>Revestimento de chutes, calhas e caçambas. Proteção contra abrasão e impacto.</p>
-            </div>
-          </article>
-          <article class="product product--utility">
-            <div class="product__body">
-              <h2>Não achou a referência?</h2>
-              <p>A Kauthec importa fora de linha sob demanda.</p>
-              <a class="btn btn--secondary" href="contato.html">Falar no WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================ CALCULADORA -->
-    <section class="section" id="calculadora">
-      <div class="container">
-        <div class="section-head section-head--split reveal">
-          <div>
-            <span class="eyebrow">Ferramenta</span>
-            <h2>Calculadora de correia PVC e PU</h2>
+        <div class="explorer reveal">
+          <div class="explorer__menu" role="tablist" aria-orientation="vertical" aria-label="Linhas de produto">
+            <button class="explorer__tab" role="tab" id="tab-v" aria-controls="linha-v" aria-selected="true" tabindex="0" type="button">
+              <span class="explorer__tab-name">Correias em V</span>
+              <span class="explorer__tab-flag">Carro-chefe</span>
+            </button>
+            <button class="explorer__tab" role="tab" id="tab-transportadora" aria-controls="linha-transportadora" aria-selected="false" tabindex="-1" type="button">
+              <span class="explorer__tab-name">Correias Transportadoras</span>
+            </button>
+            <button class="explorer__tab" role="tab" id="tab-pvc" aria-controls="linha-pvc" aria-selected="false" tabindex="-1" type="button">
+              <span class="explorer__tab-name">Correias de PVC e PU</span>
+              <span class="explorer__tab-flag">Calculadora</span>
+            </button>
+            <button class="explorer__tab" role="tab" id="tab-laminada" aria-controls="linha-laminada" aria-selected="false" tabindex="-1" type="button">
+              <span class="explorer__tab-name">Laminadas e Elevadoras</span>
+            </button>
+            <button class="explorer__tab" role="tab" id="tab-lencol" aria-controls="linha-lencol" aria-selected="false" tabindex="-1" type="button">
+              <span class="explorer__tab-name">Lençol de Borracha</span>
+            </button>
           </div>
-          <p>Ferramenta para o parceiro cotar rápido, sem tabela impressa.</p>
-        </div>
 
-        <div class="calc reveal">
-          <form id="calc-form" novalidate>
-            <div class="form form--two">
-              <label class="field">
-                <span>Comprimento (mm)</span>
-                <input type="number" id="calc-comprimento" min="1" placeholder="Ex: 3000" inputmode="numeric">
-                <span class="field__error" aria-live="polite"></span>
-              </label>
-              <label class="field">
-                <span>Largura (mm)</span>
-                <input type="number" id="calc-largura" min="1" placeholder="Ex: 500" inputmode="numeric">
-                <span class="field__error" aria-live="polite"></span>
-              </label>
-              <label class="field field--full">
-                <span>Aplicação</span>
-                <select id="calc-aplicacao">
-                  <option value="">Selecione a aplicação</option>
-                  <option value="leve">Transporte leve</option>
-                  <option value="alimenticio">Linha alimentícia</option>
-                  <option value="producao">Linha de produção</option>
-                  <option value="inclinado">Inclinado, superfície rugosa</option>
-                </select>
-                <span class="field__error" aria-live="polite"></span>
-              </label>
-              <div class="field field--full">
-                <button class="btn btn--primary" type="submit">Calcular referência <svg class="icon" aria-hidden="true"><use href="#i-calculator"/></svg></button>
-              </div>
+          <div class="explorer__stage">
+            <!-- Correia em V -->
+            <div class="explorer__panel" role="tabpanel" id="linha-v" aria-labelledby="tab-v" tabindex="0">
+              <article class="linha">
+                <div class="linha__head">
+                  <div class="linha__media">
+                    <span class="linha__flag">Carro-chefe</span>
+                    <img src="assets/images/produto-correia-v.webp" width="1600" height="1194" loading="lazy" alt="Seção transversal de uma correia em V, mostrando os cordonéis de poliéster sob a capa de lona">
+                  </div>
+                  <div class="linha__intro">
+                    <span class="eyebrow">Transmissão de potência</span>
+                    <h2>Correias em V</h2>
+                    <p>Transmissão de potência para indústria e agro. A linha que mais gira no estoque da Kauthec.</p>
+                    <dl class="linha__specs">
+                      <div class="linha__spec"><dt>Perfis</dt><dd>Liso, dentado e sextavado</dd></div>
+                      <div class="linha__spec"><dt>Aplicação</dt><dd>Indústria e agronegócio</dd></div>
+                      <div class="linha__spec"><dt>Estoque</dt><dd>Linha de giro em PR e MT</dd></div>
+                    </dl>
+                    <div class="norms">
+                      <span class="norm">NBR</span><span class="norm">DIN</span><span class="norm">ISO</span><span class="norm">ASTM</span><span class="norm">RMA</span>
+                    </div>
+                    <div class="linha__actions">
+                      <a class="btn btn--primary" href="seja-parceiro.html">Quero revender <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                      <a class="btn btn--secondary" href="assets/docs/ficha-tecnica-correia-v.pdf" download data-pendencia="⚑ · ficha técnica PDF por linha: o cliente precisa fornecer o arquivo">Ficha técnica (PDF) <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+                      <a class="btn btn--ghost" href="contato.html">Pedir orçamento</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
             </div>
-          </form>
 
-          <div class="calc__result" id="calc-result" hidden>
-            <span class="meta">Referência recomendada</span>
-            <strong class="calc__ref" id="calc-ref"></strong>
-            <dl class="calc__rows">
-              <div class="calc__row"><dt>Aplicação</dt><dd id="calc-aplicacao-out"></dd></div>
-              <div class="calc__row"><dt>Área</dt><dd id="calc-area"></dd></div>
-              <div class="calc__row"><dt>Metros lineares</dt><dd id="calc-metros"></dd></div>
-            </dl>
-            <p class="support" data-pendencia="⚑7 · o CÓDIGO de referência é um exemplo. Área e metros lineares são cálculo real. A tabela verdadeira vem do cliente">Confirme a especificação com o comercial antes de fechar o pedido.</p>
-            <a class="btn btn--primary" href="contato.html">Pedir orçamento dessa referência <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <!-- Correias Transportadoras -->
+            <div class="explorer__panel" role="tabpanel" id="linha-transportadora" aria-labelledby="tab-transportadora" tabindex="0" hidden>
+              <article class="linha">
+                <div class="linha__head">
+                  <div class="linha__media">
+                    <img src="assets/images/linha-transportadora.webp" width="800" height="800" loading="lazy" alt="Correia transportadora de carcaça têxtil com cobertura de borracha">
+                  </div>
+                  <div class="linha__intro">
+                    <span class="eyebrow">Transporte de granel</span>
+                    <h2>Correias Transportadoras</h2>
+                    <p>Carcaça em poliéster e nylon, com e sem cobertura de borracha. Resistência a impacto, abrasão e queda de material.</p>
+                    <dl class="linha__specs">
+                      <div class="linha__spec"><dt>Carcaça</dt><dd>Poliéster e nylon</dd></div>
+                      <div class="linha__spec"><dt>Coberturas</dt><dd>Anti-óleo, antichama e antiestática</dd></div>
+                      <div class="linha__spec"><dt>Serviço</dt><dd>Impacto, abrasão e granel pesado</dd></div>
+                    </dl>
+                    <div class="norms" data-pendencia="⚑8 · norma ou certificação? Confirmar também se o laudo sai por lote ou sob pedido">
+                      <span class="norm">NBR</span><span class="norm">DIN</span><span class="norm">ISO</span><span class="norm">ASTM</span><span class="norm">RMA</span>
+                    </div>
+                    <div class="linha__actions">
+                      <a class="btn btn--primary" href="seja-parceiro.html">Quero revender <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                      <a class="btn btn--secondary" href="assets/docs/ficha-tecnica-transportadora.pdf" download data-pendencia="⚑ · ficha técnica PDF por linha: o cliente precisa fornecer o arquivo">Ficha técnica (PDF) <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+                      <a class="btn btn--ghost" href="contato.html">Pedir orçamento</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="linha__tables">
+                  <div class="table-wrap" data-pendencia="⚑12 · tabelas herdadas do site atual. Validar se ainda batem">
+                    <table>
+                      <caption>Referências KT - tensão de trabalho e diâmetro mínimo de rolete</caption>
+                      <thead>
+                        <tr><th scope="col">Referência</th><th scope="col">Tensão (kgf/cm)</th><th scope="col">Diâm. mín. rolete (mm)</th><th scope="col">(pol)</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><th scope="row">KT 140/2L x 1/16 x 1/16</th><td>25</td><td>165</td><td>6.5</td></tr>
+                        <tr><th scope="row">KT 140/3L x 1/8 x 1/16</th><td>37,5</td><td>250</td><td>10</td></tr>
+                        <tr><th scope="row">KT 220/3L x 3/16 x 1/16</th><td>66</td><td>350</td><td>14</td></tr>
+                        <tr><th scope="row">KT 220/3L x 3/8 x 1/8</th><td>66</td><td>350</td><td>14</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div>
+                    <h3>Tipos de cobertura</h3>
+                    <div class="table-wrap" style="margin-top:var(--space-3)">
+                      <table>
+                        <thead>
+                          <tr><th scope="col">Código</th><th scope="col">Nome</th><th scope="col" class="wrap">Aplicação</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><th scope="row">AA</th><td>Alta Abrasão</td><td class="wrap">Areia, cal, cimento, calcário, soja, milho, trigo. Tipo RMA 2.</td></tr>
+                          <tr><th scope="row">EA</th><td>Extra Abrasão</td><td class="wrap">Brita, minério de ferro, granito, coque, escória. Tipo RMA 1.</td></tr>
+                          <tr><th scope="row">ACAOE</th><td>Antichama, Antiestática e Óleo</td><td class="wrap">Silos, armazéns e corredores portuários. Até 90 ºC.</td></tr>
+                          <tr><th scope="row">CW</th><td>Corrugada W</td><td class="wrap">Mercadoria leve em inclinação de até 35 graus.</td></tr>
+                          <tr><th scope="row">TT</th><td>Taliscada Trator</td><td class="wrap">Granel em superfície inclinada.</td></tr>
+                          <tr><th scope="row">TV</th><td>Taliscada em V</td><td class="wrap">Granel em superfície inclinada.</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Correias de PVC e PU -->
+            <div class="explorer__panel" role="tabpanel" id="linha-pvc" aria-labelledby="tab-pvc" tabindex="0" hidden>
+              <article class="linha">
+                <div class="linha__head">
+                  <div class="linha__media">
+                    <img src="assets/images/linha-pvc-pu.webp" width="800" height="800" loading="lazy" alt="Correia transportadora de PVC branca para linha de produção alimentícia">
+                  </div>
+                  <div class="linha__intro">
+                    <span class="eyebrow">Transporte leve e alimentício</span>
+                    <h2>Correias de PVC e PU</h2>
+                    <p>Transporte leve, linha alimentícia e produção. Lisas, rugosas e com perfil. Cote a referência aqui mesmo, na calculadora.</p>
+                    <dl class="linha__specs">
+                      <div class="linha__spec"><dt>Superfícies</dt><dd>Lisa, rugosa e perfilada</dd></div>
+                      <div class="linha__spec"><dt>Aplicação</dt><dd>Leve, alimentícia e produção</dd></div>
+                      <div class="linha__spec"><dt>Materiais</dt><dd>PVC e PU</dd></div>
+                    </dl>
+                    <div class="norms">
+                      <span class="norm">NBR</span><span class="norm">DIN</span><span class="norm">ISO</span><span class="norm">ASTM</span><span class="norm">RMA</span>
+                    </div>
+                    <div class="linha__actions">
+                      <a class="btn btn--primary" href="seja-parceiro.html">Quero revender <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                      <a class="btn btn--secondary" href="assets/docs/ficha-tecnica-pvc-pu.pdf" download data-pendencia="⚑ · ficha técnica PDF por linha: o cliente precisa fornecer o arquivo">Ficha técnica (PDF) <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+                      <a class="btn btn--ghost" href="contato.html">Pedir orçamento</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="linha__calc" id="calculadora">
+                  <div class="linha__calc-head">
+                    <span class="badge">Ferramenta em destaque</span>
+                    <h3>Calculadora de correia PVC e PU</h3>
+                    <p class="support">Informe as medidas e a aplicação. A referência sai na hora, sem tabela impressa.</p>
+                  </div>
+
+                  <div class="calc">
+                    <form id="calc-form" novalidate>
+                      <div class="form form--two">
+                        <label class="field">
+                          <span>Comprimento (mm)</span>
+                          <input type="number" id="calc-comprimento" min="1" placeholder="Ex: 3000" inputmode="numeric">
+                          <span class="field__error" aria-live="polite"></span>
+                        </label>
+                        <label class="field">
+                          <span>Largura (mm)</span>
+                          <input type="number" id="calc-largura" min="1" placeholder="Ex: 500" inputmode="numeric">
+                          <span class="field__error" aria-live="polite"></span>
+                        </label>
+                        <label class="field field--full">
+                          <span>Aplicação</span>
+                          <select id="calc-aplicacao">
+                            <option value="">Selecione a aplicação</option>
+                            <option value="leve">Transporte leve</option>
+                            <option value="alimenticio">Linha alimentícia</option>
+                            <option value="producao">Linha de produção</option>
+                            <option value="inclinado">Inclinado, superfície rugosa</option>
+                          </select>
+                          <span class="field__error" aria-live="polite"></span>
+                        </label>
+                        <div class="field field--full">
+                          <button class="btn btn--primary" type="submit">Calcular referência <svg class="icon" aria-hidden="true"><use href="#i-calculator"/></svg></button>
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="calc__result" id="calc-result" hidden>
+                      <span class="meta">Referência recomendada</span>
+                      <strong class="calc__ref" id="calc-ref"></strong>
+                      <dl class="calc__rows">
+                        <div class="calc__row"><dt>Aplicação</dt><dd id="calc-aplicacao-out"></dd></div>
+                        <div class="calc__row"><dt>Área</dt><dd id="calc-area"></dd></div>
+                        <div class="calc__row"><dt>Metros lineares</dt><dd id="calc-metros"></dd></div>
+                      </dl>
+                      <p class="support" data-pendencia="⚑7 · o CÓDIGO de referência é um exemplo. Área e metros lineares são cálculo real. A tabela verdadeira vem do cliente">Confirme a especificação com o comercial antes de fechar o pedido.</p>
+                      <a class="btn btn--primary" href="contato.html">Pedir orçamento dessa referência <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Correias Laminadas e Elevadoras -->
+            <div class="explorer__panel" role="tabpanel" id="linha-laminada" aria-labelledby="tab-laminada" tabindex="0" hidden>
+              <article class="linha">
+                <div class="linha__head">
+                  <div class="linha__media">
+                    <img src="assets/images/linha-laminada-elevadora.webp" width="800" height="800" loading="lazy" alt="Correia elevadora com taliscas para transporte vertical de grãos">
+                  </div>
+                  <div class="linha__intro">
+                    <span class="eyebrow">Elevação e granel</span>
+                    <h2>Correias Laminadas e Elevadoras</h2>
+                    <p>Com e sem taliscas, lisas e corrugadas. Elevação de grãos, fertilizante e material a granel.</p>
+                    <dl class="linha__specs">
+                      <div class="linha__spec"><dt>Formatos</dt><dd>Com e sem talisca, lisa e corrugada</dd></div>
+                      <div class="linha__spec"><dt>Aplicação</dt><dd>Elevação de grãos, fertilizante e granel</dd></div>
+                    </dl>
+                    <div class="norms">
+                      <span class="norm">NBR</span><span class="norm">DIN</span><span class="norm">ISO</span><span class="norm">ASTM</span><span class="norm">RMA</span>
+                    </div>
+                    <div class="linha__actions">
+                      <a class="btn btn--primary" href="seja-parceiro.html">Quero revender <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                      <a class="btn btn--secondary" href="assets/docs/ficha-tecnica-laminada-elevadora.pdf" download data-pendencia="⚑ · ficha técnica PDF por linha: o cliente precisa fornecer o arquivo">Ficha técnica (PDF) <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+                      <a class="btn btn--ghost" href="contato.html">Pedir orçamento</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Lençol de Borracha -->
+            <div class="explorer__panel" role="tabpanel" id="linha-lencol" aria-labelledby="tab-lencol" tabindex="0" hidden>
+              <article class="linha">
+                <div class="linha__head">
+                  <div class="linha__media">
+                    <img src="assets/images/linha-lencol-borracha.webp" width="800" height="800" loading="lazy" alt="Lençol de borracha para revestimento antiabrasivo de equipamentos">
+                  </div>
+                  <div class="linha__intro">
+                    <span class="eyebrow">Revestimento</span>
+                    <h2>Lençol de Borracha</h2>
+                    <p>Revestimento de chutes, calhas e caçambas. Proteção contra abrasão e impacto.</p>
+                    <dl class="linha__specs">
+                      <div class="linha__spec"><dt>Uso</dt><dd>Chutes, calhas e caçambas</dd></div>
+                      <div class="linha__spec"><dt>Função</dt><dd>Proteção contra abrasão e impacto</dd></div>
+                    </dl>
+                    <div class="norms">
+                      <span class="norm">NBR</span><span class="norm">DIN</span><span class="norm">ISO</span><span class="norm">ASTM</span><span class="norm">RMA</span>
+                    </div>
+                    <div class="linha__actions">
+                      <a class="btn btn--primary" href="seja-parceiro.html">Quero revender <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                      <a class="btn btn--secondary" href="assets/docs/ficha-tecnica-lencol-borracha.pdf" download data-pendencia="⚑ · ficha técnica PDF por linha: o cliente precisa fornecer o arquivo">Ficha técnica (PDF) <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg></a>
+                      <a class="btn btn--ghost" href="contato.html">Pedir orçamento</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ============================================ DETALHAMENTO TÉCNICO -->
-    <section class="section">
-      <div class="container">
-        <div class="about reveal">
-          <div class="about__media">
-            <img src="assets/images/produto-correia-v.webp" width="1600" height="1194" loading="lazy" alt="Seção transversal de uma correia em V, mostrando os cordonéis de poliéster sob a capa de lona">
-          </div>
-          <div>
-            <span class="eyebrow">Autoridade técnica</span>
-            <h2>Detalhamento técnico: correias transportadoras</h2>
-            <p class="lead">Carcaça em poliéster e nylon, atendendo às normas técnicas nacionais e internacionais. Resistência a impacto, abrasão e queda de material, com coberturas anti-óleo e antichama.</p>
-          </div>
-        </div>
-
-        <div class="table-wrap reveal" style="margin-top:var(--space-6)" data-pendencia="⚑12 · tabelas herdadas do site atual. Validar se ainda batem">
-          <table>
-            <caption>Referências KT - tensão de trabalho e diâmetro mínimo de rolete</caption>
-            <thead>
-              <tr><th scope="col">Referência</th><th scope="col">Tensão (kgf/cm)</th><th scope="col">Diâm. mín. rolete (mm)</th><th scope="col">(pol)</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">KT 140/2L x 1/16 x 1/16</th><td>25</td><td>165</td><td>6.5</td></tr>
-              <tr><th scope="row">KT 140/3L x 1/8 x 1/16</th><td>37,5</td><td>250</td><td>10</td></tr>
-              <tr><th scope="row">KT 220/3L x 3/16 x 1/16</th><td>66</td><td>350</td><td>14</td></tr>
-              <tr><th scope="row">KT 220/3L x 3/8 x 1/8</th><td>66</td><td>350</td><td>14</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="support reveal">Não achou a referência? A Kauthec importa fora de linha sob demanda. <a class="product__cta" href="contato.html">Falar no WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></p>
-
-        <h3 class="reveal" style="margin-top:var(--space-6)">Tipos de cobertura</h3>
-        <div class="table-wrap reveal" style="margin-top:var(--space-3)">
-          <table>
-            <thead>
-              <tr><th scope="col">Código</th><th scope="col">Nome</th><th scope="col" class="wrap">Aplicação</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">AA</th><td>Alta Abrasão</td><td class="wrap">Areia, cal, cimento, calcário, soja, milho, trigo. Tipo RMA 2.</td></tr>
-              <tr><th scope="row">EA</th><td>Extra Abrasão</td><td class="wrap">Brita, minério de ferro, granito, coque, escória. Tipo RMA 1.</td></tr>
-              <tr><th scope="row">ACAOE</th><td>Antichama, Antiestática e Óleo</td><td class="wrap">Silos, armazéns e corredores portuários. Até 90 ºC.</td></tr>
-              <tr><th scope="row">CW</th><td>Corrugada W</td><td class="wrap">Mercadoria leve em inclinação de até 35 graus.</td></tr>
-              <tr><th scope="row">TT</th><td>Taliscada Trator</td><td class="wrap">Granel em superfície inclinada.</td></tr>
-              <tr><th scope="row">TV</th><td>Taliscada em V</td><td class="wrap">Granel em superfície inclinada.</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <p class="support reveal" style="margin-top:var(--space-5)">Não achou a referência? A Kauthec importa fora de linha sob demanda. <a class="product__cta" href="contato.html">Falar no WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></p>
       </div>
     </section>
 

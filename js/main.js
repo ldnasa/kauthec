@@ -270,6 +270,54 @@
     });
   }
 
+  /* ---------------------------------------------------------------- 6d. explorador de linhas (produtos)
+     Master-detail: cada aba (linha de produto) mostra seu painel de detalhe.
+     Deep-link: #calculadora abre a linha PVC e rola ate a calculadora. */
+  const explorer = $(".explorer");
+  if (explorer) {
+    const tabs = $$(".explorer__tab", explorer);
+    const panels = $$(".explorer__panel", explorer);
+
+    const activate = (id, moveFocus) => {
+      if (!panels.some((p) => p.id === id)) return;
+      tabs.forEach((t) => {
+        const on = t.getAttribute("aria-controls") === id;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        if (on && moveFocus) t.focus();
+      });
+      panels.forEach((p) => { p.hidden = p.id !== id; });
+    };
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => activate(tab.getAttribute("aria-controls")));
+      tab.addEventListener("keydown", (e) => {
+        let next = null;
+        if (e.key === "ArrowDown" || e.key === "ArrowRight") next = (i + 1) % tabs.length;
+        if (e.key === "ArrowUp" || e.key === "ArrowLeft") next = (i - 1 + tabs.length) % tabs.length;
+        if (e.key === "Home") next = 0;
+        if (e.key === "End") next = tabs.length - 1;
+        if (next === null) return;
+        e.preventDefault();
+        activate(tabs[next].getAttribute("aria-controls"), true);
+      });
+    });
+
+    const openFromHash = () => {
+      const h = location.hash.replace("#", "");
+      if (!h) return;
+      if (h === "calculadora") {
+        activate("linha-pvc");
+        const calc = document.getElementById("calculadora");
+        if (calc) calc.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+        return;
+      }
+      if (panels.some((p) => p.id === h)) activate(h);
+    };
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+  }
+
   /* ---------------------------------------------------------------- 7. calculadora PVC/PU
      ⚑7 A FORMULA E A TABELA ABAIXO SAO EXEMPLO.
      O calculo de area e de metros lineares e aritmetica real.

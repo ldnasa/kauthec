@@ -11,7 +11,8 @@ Imagens de produção. WebP, dentro do orçamento de performance do `DESIGN.md`
 | `aplicacao-agroindustria.webp` | 72 KB | Seção Indústrias Atendidas | Recraft V4.1, 3:2 |
 | `produto-correia-v.webp` | 118 KB | Página Produtos, detalhamento técnico | Nano Banana Pro, 4:3 |
 | `textura-correia.webp` | 27 KB | Substrato de seção, baixa opacidade | Recraft V4.1, 1:1 |
-| `photo-kauthec-fachada.webp` | 21 KB | Bloco "Sobre a Kauthec" | **Foto real**, tratada |
+| `photo-kauthec-fachada.webp` | 64 KB | og:image da página Contato | **Foto real** do cliente (2026-08) |
+| `photo-kauthec-fachada-square.webp` | 163 KB | Bloco "Sobre a Kauthec" | **Foto real** do cliente (2026-08) |
 
 ## Linha de produtos (os cinco cards)
 
@@ -42,10 +43,16 @@ qualidade individual, é falta de sistema.
 overlay. Texto do hero sempre sobre a parte escura (esquerda).
 Ver `design_system/specs/patterns/hero.md`.
 
-`photo-kauthec-fachada.webp` é a **única foto real da Kauthec neste diretório.** Original
-em `_raw/photo-kauthec-front-original.webp`. Tratada com dessaturação 0.22, contraste 1.20,
-sombras quentes e vinheta, para tirar o toldo vermelho e o céu estourado de dia nublado
-que brigavam com a paleta.
+Os dois `photo-kauthec-fachada*` são as **únicas fotos reais da Kauthec neste diretório.**
+
+Trocadas em 2026-08 pela foto que o cliente enviou no "Ajustes SITE.docx". É um **prédio
+diferente** do que estava no ar antes, com céu azul no lugar do dia nublado. Original em
+`_raw/fachada-cliente-2026-08.png` (1600x1200, extraído do PDF). Sem tratamento: a foto
+já chega com luz direcional e a placa legível.
+
+Dois recortes da mesma fonte: quadrado 1100x1100 para o bloco Sobre, e faixa 1300x411
+para o og:image. Pedir o arquivo original em resolução maior ao cliente. Confirmar também
+**qual unidade** aparece na foto, porque o alt hoje está genérico de propósito.
 
 Serve num bloco contido. **Não serve de hero**: a luz é chapada, sem direção, o oposto da
 direção de foto do DS. Vale um ensaio real nas duas unidades.
@@ -94,3 +101,18 @@ Os prompts que funcionaram, e as lições, estão na seção `09 AI Gen` de
 Geradas via Magnific (Recraft V4.1 e Google Nano Banana Pro) em plano pago.
 Confirmar os termos de uso comercial antes de publicar. Nenhuma contém texto, logo,
 rosto identificável ou marca de terceiros. A fachada é foto do próprio cliente.
+
+
+## Imagens sem uso (2026-08-10)
+
+Nenhuma foi apagada. Auditadas com grep sobre `*.html`, `*.css` e `*.js`.
+
+| Arquivo | Peso | Desde quando |
+|---|---|---|
+| `linha-laminada-elevadora.webp` | 25 KB | Onda 3: a linha Laminadas foi absorvida por Transportadoras e Elevadoras |
+| `aplicacao-agroindustria.webp` | 72 KB | Já estava órfã no commit `eb1e2b9` |
+| `textura-correia.webp` | 27 KB | Já estava órfã no commit `eb1e2b9` |
+| `pontos-parceiro-kauthec-trophy.png` | **1,6 MB** | Já estava órfã no commit `eb1e2b9`. O site usa a `trophy2.png` |
+
+O troféu antigo sozinho pesa mais que todas as outras imagens somadas. Decidir se apaga
+antes de publicar.

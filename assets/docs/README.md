@@ -10,10 +10,13 @@ Basta soltar os arquivos aqui com estes nomes exatos:
 | Linha | Arquivo esperado |
 |---|---|
 | Correias em V | `ficha-tecnica-correia-v.pdf` |
-| Correias Transportadoras | `ficha-tecnica-transportadora.pdf` |
+| Correias Transportadoras e Elevadoras | `ficha-tecnica-transportadora.pdf` |
 | Correias de PVC e PU | `ficha-tecnica-pvc-pu.pdf` |
-| Laminadas e Elevadoras | `ficha-tecnica-laminada-elevadora.pdf` |
-| Lençol de Borracha | `ficha-tecnica-lencol-borracha.pdf` |
+| Revestimentos de Borracha | `ficha-tecnica-revestimento-borracha.pdf` |
+
+São **quatro** arquivos, não cinco. Em 2026-08 o cliente agrupou Transportadoras com
+Elevadoras e renomeou Lençol de Borracha para Revestimentos de Borracha. A linha de
+filial (acoplamentos e canecas) não tem botão de ficha técnica, só orçamento.
 
 Assim que os arquivos estiverem aqui, remover os marcadores `data-pendencia`
 dos botões em `produtos.html` (buscar por `ficha técnica PDF por linha`).

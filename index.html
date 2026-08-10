@@ -94,7 +94,14 @@
     <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
     <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 20h16"/></symbol>
     <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4V4z"/><path d="M8 8h8"/><path d="M8 12h5"/></symbol>
+    <symbol id="i-doc-check" viewBox="0 0 24 24"><path d="M13 2H5v20h9"/><path d="M8 7h6"/><path d="M8 11h4"/><path d="M17 13l4 2v3.5c0 1.9-1.7 3.4-4 4.5-2.3-1.1-4-2.6-4-4.5V15z"/><path d="M15.5 18.5l1.3 1.3 2.4-2.4"/></symbol>
     <symbol id="i-agro" viewBox="0 0 24 24"><path d="M12 21V8"/><path d="M12 8c-4 0-7-2-8-5 4 0 7 2 8 5z"/><path d="M12 12c4 0 7-2 8-5-4 0-7 2-8 5z"/><path d="M12 16c-3 0-5-1.5-6-4 3 0 5 1.5 6 4z"/></symbol>
+    <!-- Trilho do hero e jornada do parceiro -->
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M3.4 12h17.2"/><path d="M12 3.4c2.4 2.3 3.7 5.4 3.7 8.6S14.4 18.3 12 20.6C9.6 18.3 8.3 15.2 8.3 12S9.6 5.7 12 3.4z"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.6"/><circle cx="12" cy="12" r="2.6"/><path d="M18.6 12H21.2M16.7 16.7L18.5 18.5M12 18.6V21.2M7.3 16.7L5.5 18.5M5.4 12H2.8M7.3 7.3L5.5 5.5M12 5.4V2.8M16.7 7.3L18.5 5.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M3 20v-1.5C3 16 5.7 14 9 14s6 2 6 4.5V20"/><path d="M16 5.4a3.4 3.4 0 0 1 0 6.4"/><path d="M18 14.4c1.9.7 3 2.2 3 4.1V20"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="3.4"/><path d="M13.4 10.6L20 4"/><path d="M16.5 4h3.5v3.5"/></symbol>
+    <symbol id="i-chart-up" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M6 21v-6"/><path d="M11 21V11"/><path d="M16 21V7"/><path d="M4 9l5-4 4 3 6-5"/><path d="M16 3h3v3"/></symbol>
     <symbol id="i-cement" viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M5 18l3-10h8l3 10"/><path d="M9 8V4h6v4"/><path d="M8 13h8"/></symbol>
     <symbol id="i-mining" viewBox="0 0 24 24"><path d="M4 20 14 10"/><path d="m11 7 6 6"/><path d="M13 5c3 0 5 1 7 3"/></symbol>
     <symbol id="i-wood" viewBox="0 0 24 24"><path d="M4 8h13a4 4 0 0 1 0 8H4z"/><circle cx="17" cy="12" r="2"/><path d="M7 9v6"/><path d="M10 9v6"/></symbol>
@@ -148,107 +155,57 @@
   <main id="main">
 
     <!-- ============================================ 1. HERO -->
-    <section class="hero" data-hero-variant="a">
-
-      <!-- Hero A: layout atual (foto full + malha) -->
-      <div class="hero__variant hero__variant--a">
-        <div class="hero__media">
-          <img src="assets/images/hero-expedicao.webp" width="1920" height="1098" fetchpriority="high"
-               alt="Bobinas de correia transportadora prontas para expedição no estoque da Kauthec">
-        </div>
-        <div class="hero__mesh" aria-hidden="true"></div>
-
-        <div class="container hero__inner">
-          <div>
-            <span class="eyebrow">Importadora de correias desde 2007</span>
-
-            <h1 class="js-words">Seja parceiro de quem entrega no <span class="hl">prazo</span> prometido.</h1>
-
-            <p class="lead">A Kauthec importa e distribui correia industrial e agrícola. Você cuida do seu cliente. A gente entrega no prazo, com estoque em linha e laudo técnico nas unidades de PR e MT.</p>
-
-            <div class="hero__actions">
-              <a class="btn btn--primary" href="seja-parceiro.html">Quero ser parceiro <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-              <a class="btn btn--secondary" href="contato.html">Falar no WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
-            </div>
-
-            <div class="hero__meta">
-              <span class="meta">Ibiporã, PR</span>
-              <span class="meta">Várzea Grande, MT</span>
-              <span class="meta">Desde 2007</span>
-              <span class="meta">Role para ver</span>
-            </div>
-          </div>
-
-          <aside class="hero__rail" aria-label="Ficha técnica da Kauthec">
-            <div class="spec">
-              <span class="meta">Normas</span>
-              <strong data-pendencia="⚑8 · norma ou certificação?">NBR · DIN · ISO · ASTM · RMA</strong>
-            </div>
-            <div class="spec">
-              <span class="meta">Estoque</span>
-              <strong data-pendencia="⚑3 · confirmar o número">+10.000 m por mês</strong>
-            </div>
-            <div class="spec">
-              <span class="meta">Entrega</span>
-              <strong data-pendencia="⚑6 · EXEMPLO INVENTADO. Não publicar sem confirmar o prazo real">3 dias úteis</strong>
-            </div>
-          </aside>
-        </div>
+    <section class="hero">
+      <div class="hero__media">
+        <img src="assets/images/hero-expedicao.webp" width="1920" height="1098" fetchpriority="high"
+             alt="Bobinas de correia transportadora prontas para expedição no estoque da Kauthec">
       </div>
+      <div class="hero__mesh" aria-hidden="true"></div>
 
-      <!-- Hero B: layout referência manufact (grade clara + foto embaixo) -->
-      <div class="hero__variant hero__variant--b theme-light" aria-hidden="true">
-        <div class="hero-b__canvas">
-          <div class="container hero-b__top">
-            <div class="hero-b__col hero-b__col--head">
-              <div class="hero-b__badge">
-                <span class="hero-b__badge-dot" aria-hidden="true"></span>
-                Importadora de correias industriais e agrícolas
-              </div>
+      <div class="container hero__inner">
+        <div>
+          <span class="eyebrow">Importadora de correias desde 2007</span>
 
-              <h1 class="js-words hero-b__title">Seja parceiro de quem entrega no <span class="hl">prazo</span> prometido.</h1>
+          <h1 class="js-words">O <span class="hl">estoque</span> que sua revenda precisa, com a <span class="hl">engenharia</span> que seu cliente exige.</h1>
 
-              <aside class="hero-b__specs" aria-label="Ficha técnica da Kauthec">
-                <div class="hero-b__spec">
-                  <span class="meta">Normas</span>
-                  <strong data-pendencia="⚑8 · norma ou certificação?">NBR · DIN · ISO · ASTM · RMA</strong>
-                </div>
-                <div class="hero-b__spec">
-                  <span class="meta">Estoque</span>
-                  <strong data-pendencia="⚑3 · confirmar o número">+10.000 m por mês</strong>
-                </div>
-                <div class="hero-b__spec">
-                  <span class="meta">Entrega</span>
-                  <strong data-pendencia="⚑6 · EXEMPLO INVENTADO. Não publicar sem confirmar o prazo real">3 dias úteis</strong>
-                </div>
-              </aside>
-            </div>
+          <p class="lead">Importação direta e distribuição nacional de correias industriais e agrícolas. <strong class="hl">Garanta margem</strong>, pronta-entrega e a customização técnica que diferencia o seu negócio da concorrência.</p>
 
-            <div class="hero-b__col hero-b__col--side">
-              <span class="hero-b__tag meta">// Desde 2007 //</span>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="seja-parceiro.html">Quero ser parceiro <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn btn--secondary" href="contato.html">Falar no WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+          </div>
 
-              <p class="lead hero-b__lead">A Kauthec importa e distribui correia industrial e agrícola. Você cuida do seu cliente. A gente entrega no prazo, com estoque em linha e laudo técnico nas unidades de PR e MT.</p>
-
-              <div class="hero__actions hero-b__actions">
-                <a class="btn btn--primary" href="seja-parceiro.html">Quero ser parceiro <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-                <a class="btn btn--secondary" href="contato.html">Falar no WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
-              </div>
-            </div>
-
-            <div class="hero-b__bar">
-              <span class="meta">Ibiporã, PR</span>
-              <span class="meta">Várzea Grande, MT</span>
-              <span class="meta">Desde 2007</span>
-              <span class="meta">Role para ver</span>
-            </div>
+          <div class="hero__meta">
+            <span class="meta">Ibiporã, PR</span>
+            <span class="meta">Várzea Grande, MT</span>
+            <span class="meta">Desde 2007</span>
+            <span class="meta">Role para ver</span>
           </div>
         </div>
 
-        <div class="hero-b__media">
-          <video class="hero-b__video" src="assets/video/video-hero-test.mp4" width="1920" height="1080"
-                 poster="assets/images/hero-expedicao.webp" autoplay muted loop playsinline
-                 aria-label="Bobinas de correia transportadora prontas para expedição no estoque da Kauthec"></video>
-        </div>
+        <aside class="hero__rail" aria-label="Ficha técnica da Kauthec">
+          <div class="spec">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-globe"/></svg>
+            <div class="spec__body">
+              <span class="meta">Certificação internacional:</span>
+              <strong data-pendencia="⚑8 · rótulo “Certificação” pedido pelo cliente. NBR, DIN e ASTM são normas e RMA é classificação de cobertura. Confirmar se existe certificado ISO">NBR · DIN · ISO · ASTM · RMA</strong>
+            </div>
+          </div>
+          <div class="spec">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-gear"/></svg>
+            <div class="spec__body">
+              <span class="meta">Capacidade operacional:</span>
+              <strong data-pendencia="⚑3 · confirmar o número">+10.000m/mês</strong>
+            </div>
+          </div>
+          <div class="spec">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-delivery"/></svg>
+            <div class="spec__body">
+              <span class="meta">Logística de alta performance:</span>
+              <strong>Pronta-entrega em 72h</strong>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -257,20 +214,20 @@
       <div class="container">
         <div class="grid-hairline cols-4 stats-strip reveal">
           <div class="stat">
-            <span class="stat__value">Desde 2007</span>
-            <span class="stat__label">no mercado de correias</span>
+            <span class="stat__value" data-count="19" data-pendencia="⚑3 · número fixo. Vira 20 em 2027, lembrar de atualizar ou voltar para “desde 2007”">19</span>
+            <span class="stat__label">Anos de expertise</span>
           </div>
           <div class="stat">
-            <span class="stat__value" data-count="100" data-count-prefix="+" data-pendencia="⚑3 · confirmar">+100</span>
-            <span class="stat__label">clientes no Brasil</span>
+            <span class="stat__value" data-pendencia="⚑3 · +15 mil parceiros não fecha com o debriefing, que fala em faixa de +100 clientes. Confirmar com o Bruno"><span data-count="15" data-count-prefix="+">+15</span> MIL</span>
+            <span class="stat__label">Parceiros estratégicos</span>
           </div>
           <div class="stat">
-            <span class="stat__value" data-count="10000" data-count-prefix="+" data-pendencia="⚑3 · confirmar">+10.000</span>
-            <span class="stat__label">metros de correia entregues por mês</span>
+            <span class="stat__value" data-count="120000" data-count-prefix="+" data-pendencia="⚑3 · confirmar o número">+120.000</span>
+            <span class="stat__label">Metros entregues/ano</span>
           </div>
           <div class="stat">
             <span class="stat__value">5</span>
-            <span class="stat__label">linhas de produto em estoque</span>
+            <span class="stat__label">Segmentos críticos</span>
           </div>
         </div>
       </div>
@@ -281,14 +238,14 @@
       <div class="container">
         <div class="about about--compact grid-hairline reveal">
           <div class="about__media" data-pendencia="⚑5 · o vídeo institucional do YouTube ainda representa a empresa? Se sim, este slot vira o embed">
-            <img src="assets/images/photo-kauthec-fachada-square.webp" width="1254" height="1254" loading="lazy"
-                 alt="Fachada da matriz da Kauthec do Brasil em Ibiporã, Paraná">
+            <img src="assets/images/photo-kauthec-fachada-square.webp" width="1100" height="1100" loading="lazy"
+                 alt="Fachada da Kauthec do Brasil, com o letreiro da marca sobre a entrada">
           </div>
           <div class="about__body">
-            <span class="eyebrow">Quem é a Kauthec</span>
-            <h2>Importamos direto. Estoque próprio faz o prazo fechar.</h2>
-            <p class="lead">Desde 2007 a Kauthec importa e distribui correia industrial e agrícola para o Brasil inteiro. Cinco linhas ficam em estoque nas unidades de Ibiporã-PR e Várzea Grande-MT, com laudo técnico e norma por trás de cada uma.</p>
-            <p class="support" data-pendencia="⚑4 · a Kauthec se compromete formalmente a não vender ao cliente do parceiro?">Trabalhamos lado a lado com quem revende. Quem fecha a venda na ponta é o parceiro. A Kauthec fica na retaguarda técnica para sustentar prazo e estoque.</p>
+            <span class="eyebrow">Infraestrutura e tecnologia</span>
+            <h2>Muito além da distribuição: somos o braço técnico da sua revenda.</h2>
+            <p class="lead">Desde 2007, a Kauthec atua na importação e distribuição de soluções em correias para todo o território nacional. Com unidades estratégicas no PR e MT, mantemos um estoque robusto e diversificado, garantindo que você tenha o produto certo, no momento exato.</p>
+            <p class="support">Nosso diferencial está no Centro de Serviços: realizamos refile de precisão, aplicação de guias e taliscas, e emendas técnicas (frias e quentes). Entregamos a correia pronta para a operação, agregando valor e agilidade ao seu portfólio.</p>
           </div>
         </div>
       </div>
@@ -299,59 +256,52 @@
       <div class="container">
         <div class="section-head section-head--split reveal">
           <div>
-            <span class="eyebrow">Diferenciais</span>
-            <h2>Por que parceiros escolhem a Kauthec</h2>
+            <span class="eyebrow">Estratégia e parceria</span>
+            <h2>Sua revenda mais forte com a nossa retaguarda</h2>
           </div>
-          <p>Não é catálogo. É retaguarda para você vender com segurança.</p>
+          <p>Importação direta e estoque robusto para impulsionar o seu crescimento.</p>
         </div>
 
         <div class="feature-lead reveal">
           <span class="badge">Nosso diferencial</span>
-          <h3 data-pendencia="⚑6 · quando o prazo real chegar, vira: “Correia despachada em X dias úteis.”">O prazo fecha porque o estoque é nosso.</h3>
-          <p>Cinco linhas em estoque e expedição de duas unidades, PR e MT. Você promete prazo ao seu cliente e cumpre. Máquina parada é o que mais dói na indústria e no agro, e é aí que a Kauthec ganha.</p>
+          <h3>Importação própria e Centro de Serviços.</h3>
+          <p>Estoque estratégico no PR e MT. Entregamos correia customizada com a agilidade que o seu cliente exige e o prazo que você precisa cumprir.</p>
         </div>
 
         <div class="grid-hairline cols-4 pillars reveal">
           <article class="pillar">
             <svg class="icon icon--lg" aria-hidden="true"><use href="#i-partnership"/></svg>
-            <h3>Parceria de verdade</h3>
-            <p data-pendencia="⚑4 · confirmar a promessa de proteção de canal">O revendedor é parceiro, não é mais um pedido. E a gente não vende para o cliente que é seu.</p>
+            <h3>Aliança B2B real</h3>
+            <p data-pendencia="⚑4 · o cliente reescreveu este card sem a promessa de canal protegido. A frase final foi mantida por decisão, conferir com o Bruno">Foco total no sucesso do revendedor, com condições de atacado que protegem a sua margem. E a gente não vende para o cliente que é seu.</p>
           </article>
           <article class="pillar">
-            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-stock"/></svg>
-            <h3>Estoque em linha</h3>
-            <p>Cinco linhas prontas nas duas unidades. Menos espera, menos venda perdida.</p>
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-delivery"/></svg>
+            <h3>Pronta-entrega</h3>
+            <p>Estoque massivo nas linhas críticas. Importação contínua para a sua revenda nunca parar.</p>
           </article>
           <article class="pillar">
             <svg class="icon icon--lg" aria-hidden="true"><use href="#i-certificate"/></svg>
-            <h3>Laudo e certificação</h3>
-            <p data-pendencia="⚑8 · norma ou certificação?">NBR, DIN, ISO, ASTM e RMA. Você revende importado com respaldo técnico na negociação.</p>
+            <h3>Padrão internacional</h3>
+            <p data-pendencia="⚑8 · “certificações” é o termo do cliente. NBR, DIN e ASTM são normas e RMA é classificação. Confirmar se existe certificado ISO">Certificações NBR, DIN, ISO, ASTM e RMA. Venda com a segurança de um produto de classe mundial.</p>
           </article>
           <article class="pillar">
             <svg class="icon icon--lg" aria-hidden="true"><use href="#i-support"/></svg>
-            <h3>Suporte para vender</h3>
-            <p data-pendencia="⚑9 · pode prometer a central de marketing?">Material técnico e especificação pronta para o parceiro apresentar e fechar. Central de marketing em breve.</p>
+            <h3>Suporte técnico</h3>
+            <p>Suporte especializado para projetos e demandas técnicas. Ajudamos você a viabilizar negócios de alto valor.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- ============================================ 5. LINHA DE PRODUTOS -->
-    <section class="section section--light theme-light products-section" data-products-variant="b">
+    <section class="section section--light theme-light products-section">
       <div class="container">
-        <div class="products-section__toolbar reveal">
-          <div class="layout-switch" role="group" aria-label="Alternar layout da linha de produtos">
-            <button class="layout-switch__btn" type="button" data-products="a" aria-pressed="false">A</button>
-            <button class="layout-switch__btn is-active" type="button" data-products="b" aria-pressed="true">B</button>
-          </div>
-        </div>
-
         <header class="products-section__head reveal">
           <span class="eyebrow">Linha de produtos</span>
           <div class="products-section__title-row">
             <h2>Linha completa de correia e borracha industrial</h2>
             <div class="products-section__aside">
-              <p class="products-section__deck">Cinco linhas importadas e mantidas em estoque.</p>
+              <p class="products-section__deck">Quatro linhas importadas e mantidas em estoque.</p>
               <div class="carousel-nav" data-products-nav aria-label="Navegar linha de produtos">
                 <button type="button" class="carousel-nav__btn" data-carousel-prev aria-label="Produtos anteriores" disabled>
                   <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
@@ -365,84 +315,7 @@
         </header>
       </div>
 
-      <!-- Variante A: grade -->
-      <div class="products__variant products__variant--a" aria-hidden="true">
-        <div class="container">
-          <div class="grid-hairline cols-3 reveal">
-            <article class="product">
-              <div class="product__thumb">
-                <span class="product__flag">Mais procurado</span>
-                <img src="assets/images/linha-correia-v.webp" width="800" height="800" loading="lazy"
-                     alt="Correia de transmissão em V para uso industrial e agrícola">
-              </div>
-              <div class="product__body">
-                <h3>Correias em V</h3>
-                <p>O carro-chefe da Kauthec. Transmissão de potência para indústria e agro. Lisas, dentadas e sextavadas.</p>
-                <a class="product__cta" href="produtos.html">Ver especificações <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-              </div>
-            </article>
-
-            <article class="product">
-              <div class="product__thumb">
-                <img src="assets/images/linha-transportadora.webp" width="800" height="800" loading="lazy"
-                     alt="Correia transportadora de carcaça têxtil com cobertura de borracha">
-              </div>
-              <div class="product__body">
-                <h3>Correias Transportadoras</h3>
-                <p>Carcaça em poliéster e nylon. Para impacto, abrasão e granel pesado.</p>
-                <a class="product__cta" href="produtos.html">Ver especificações <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-              </div>
-            </article>
-
-            <article class="product">
-              <div class="product__thumb">
-                <img src="assets/images/linha-pvc-pu.webp" width="800" height="800" loading="lazy"
-                     alt="Correia transportadora de PVC branca para linha de produção alimentícia">
-              </div>
-              <div class="product__body">
-                <h3>Correias de PVC e PU</h3>
-                <p>Transporte leve, linha alimentícia e produção. Com calculadora de referência.</p>
-                <a class="product__cta" href="produtos.html#calculadora">Calcular e ver specs <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-              </div>
-            </article>
-
-            <article class="product">
-              <div class="product__thumb">
-                <img src="assets/images/linha-laminada-elevadora.webp" width="800" height="800" loading="lazy"
-                     alt="Correia elevadora com taliscas para transporte vertical de grãos">
-              </div>
-              <div class="product__body">
-                <h3>Correias Laminadas e Elevadoras</h3>
-                <p>Com e sem taliscas, lisas e corrugadas. Para elevação de grãos e materiais.</p>
-                <a class="product__cta" href="produtos.html">Ver especificações <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-              </div>
-            </article>
-
-            <article class="product">
-              <div class="product__thumb">
-                <img src="assets/images/linha-lencol-borracha.webp" width="800" height="800" loading="lazy"
-                     alt="Lençol de borracha para revestimento antiabrasivo de equipamentos">
-              </div>
-              <div class="product__body">
-                <h3>Lençol de Borracha</h3>
-                <p>Revestimento e proteção contra abrasão.</p>
-                <a class="product__cta" href="produtos.html">Ver especificações <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-              </div>
-            </article>
-
-            <article class="product product--utility product--utility-dark">
-              <div class="product__body">
-                <h3>Precisa de uma correia específica?</h3>
-                <p>A Kauthec importa fora de linha sob demanda.</p>
-                <a class="btn btn--secondary" href="contato.html">Pedir orçamento <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-
-      <!-- Variante B: carrossel -->
-      <div class="products__variant products__variant--b" aria-hidden="false">
+      <div class="products__carousel">
         <div class="product-carousel__stage reveal">
           <div class="container">
             <div class="product-carousel__viewport" data-carousel-viewport tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Linha de produtos">
@@ -455,7 +328,7 @@
                   </div>
                   <div class="product__body">
                     <h3>Correias em V</h3>
-                    <p>O carro-chefe da Kauthec. Transmissão de potência para indústria e agro. Lisas, dentadas e sextavadas.</p>
+                    <p>Alta performance para transmissões industriais e agrícolas.</p>
                   </div>
                 </article>
 
@@ -465,8 +338,19 @@
                          alt="Correia transportadora de carcaça têxtil com cobertura de borracha">
                   </div>
                   <div class="product__body">
-                    <h3>Correias Transportadoras</h3>
-                    <p>Carcaça em poliéster e nylon. Para impacto, abrasão e granel pesado.</p>
+                    <h3>Correias Transportadoras e Elevadoras</h3>
+                    <p>Robustez e tecnologia para movimentação de carga.</p>
+                  </div>
+                </article>
+
+                <article class="product product-carousel__slide" data-carousel-slide data-cta-href="produtos.html" data-cta-label="Ver especificações">
+                  <div class="product__thumb">
+                    <img src="assets/images/linha-lencol-borracha.webp" width="800" height="800" loading="lazy"
+                         alt="Revestimento de borracha antiabrasivo para tambores, roletes e equipamentos">
+                  </div>
+                  <div class="product__body">
+                    <h3>Revestimentos de Borracha</h3>
+                    <p>Proteção e durabilidade para tambores e roletes.</p>
                   </div>
                 </article>
 
@@ -476,30 +360,8 @@
                          alt="Correia transportadora de PVC branca para linha de produção alimentícia">
                   </div>
                   <div class="product__body">
-                    <h3>Correias de PVC e PU</h3>
-                    <p>Transporte leve, linha alimentícia e produção. Com calculadora de referência.</p>
-                  </div>
-                </article>
-
-                <article class="product product-carousel__slide" data-carousel-slide data-cta-href="produtos.html" data-cta-label="Ver especificações">
-                  <div class="product__thumb">
-                    <img src="assets/images/linha-laminada-elevadora.webp" width="800" height="800" loading="lazy"
-                         alt="Correia elevadora com taliscas para transporte vertical de grãos">
-                  </div>
-                  <div class="product__body">
-                    <h3>Correias Laminadas e Elevadoras</h3>
-                    <p>Com e sem taliscas, lisas e corrugadas. Para elevação de grãos e materiais.</p>
-                  </div>
-                </article>
-
-                <article class="product product-carousel__slide" data-carousel-slide data-cta-href="produtos.html" data-cta-label="Ver especificações">
-                  <div class="product__thumb">
-                    <img src="assets/images/linha-lencol-borracha.webp" width="800" height="800" loading="lazy"
-                         alt="Lençol de borracha para revestimento antiabrasivo de equipamentos">
-                  </div>
-                  <div class="product__body">
-                    <h3>Lençol de Borracha</h3>
-                    <p>Revestimento e proteção contra abrasão.</p>
+                    <h3>Correias em PVC e PU</h3>
+                    <p>Precisão e higiene para processos industriais e alimentares.</p>
                   </div>
                 </article>
 
@@ -526,17 +388,18 @@
       <div class="container">
         <div class="cta-band calc-teaser reveal">
           <div>
-            <span class="eyebrow">Ferramenta</span>
-            <h2>Calcule sua correia de PVC e PU</h2>
-            <p class="lead">Informe as medidas e a aplicação. A referência sai na hora, sem tabela impressa e sem esperar retorno do comercial.</p>
+            <span class="eyebrow">Ferramentas</span>
+            <h2>Duas calculadoras para especificar certo na primeira vez</h2>
+            <p class="lead">Sem tabela impressa e sem esperar retorno do comercial. A conta sai na hora, na tela.</p>
           </div>
           <div class="calc-teaser__media">
             <div class="grid-hairline cols-2">
-              <div class="stat"><span class="meta">Entrada</span><span class="stat__label">Comprimento, largura e aplicação</span></div>
-              <div class="stat"><span class="meta">Saída</span><span class="stat__label">Referência, área em m² e metros lineares</span></div>
+              <div class="stat"><span class="meta">Comprimento</span><span class="stat__label">Correia sem fim, a partir de D, d e distância entre centros</span></div>
+              <div class="stat"><span class="meta">PVC e PU</span><span class="stat__label">Referência, área em m² e metros lineares</span></div>
             </div>
             <div class="cta-band__actions">
-              <a class="btn btn--primary" href="produtos.html#calculadora">Abrir calculadora <svg class="icon" aria-hidden="true"><use href="#i-calculator"/></svg></a>
+              <a class="btn btn--primary" href="produtos.html#calculadora-comprimento">Calcular comprimento <svg class="icon" aria-hidden="true"><use href="#i-calculator"/></svg></a>
+              <a class="btn btn--secondary" href="produtos.html#calculadora">Calcular PVC e PU</a>
             </div>
           </div>
         </div>
@@ -574,33 +437,48 @@
       <div class="container">
         <div class="section-head section-head--split process-head reveal">
           <div>
-            <span class="eyebrow">Processo</span>
-            <h2>Virar parceiro Kauthec é simples e direto</h2>
+            <span class="eyebrow">Jornada do parceiro</span>
+            <h2>O caminho para transformar sua revenda em uma potência regional.</h2>
           </div>
-          <aside class="partner-points" aria-label="Pontos Parceiro Kauthec em breve">
+          <aside class="partner-points" aria-label="Programa de Fidelidade Kauthec em breve">
             <img src="assets/images/pontos-parceiro-kauthec-trophy2.png" width="854" height="1724" loading="lazy" alt="">
             <div class="partner-points__copy">
-              <span class="meta">EM BREVE</span>
-              <strong>PONTOS PARCEIRO KAUTHEC</strong>
+              <span class="meta">EM BREVE:</span>
+              <strong data-pendencia="⚑9 · prometer o programa de fidelidade cria expectativa. Confirmar se pode anunciar">PROGRAMA DE FIDELIDADE KAUTHEC</strong>
             </div>
           </aside>
         </div>
 
         <ol class="grid-hairline cols-3 steps reveal">
           <li class="step">
-            <span class="step__index">Passo 01</span>
-            <h3>Fale com a gente</h3>
-            <p>Formulário ou WhatsApp. Tenha em mãos o CNPJ e uma cópia do contrato social.</p>
+            <div class="step__head">
+              <span class="step__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <div>
+                <span class="step__index">01.</span>
+                <h3>Conexão inicial</h3>
+              </div>
+            </div>
+            <p>Inicie o contato via WhatsApp ou formulário. Realizamos um diagnóstico ágil para alinhar seu perfil ao nosso estoque estratégico.</p>
           </li>
           <li class="step">
-            <span class="step__index">Passo 02</span>
-            <h3>Receba a proposta de parceria</h3>
-            <p>Condições comerciais, linhas disponíveis e região de atuação.</p>
+            <div class="step__head">
+              <span class="step__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-target"/></svg></span>
+              <div>
+                <span class="step__index">02.</span>
+                <h3>Alinhamento estratégico</h3>
+              </div>
+            </div>
+            <p>Receba uma proposta personalizada com margens de atacado, mix de produtos ideal e logística otimizada para sua região.</p>
           </li>
           <li class="step">
-            <span class="step__index">Passo 03</span>
-            <h3>Comece a revender</h3>
-            <p>Com prazo, estoque, laudo técnico e suporte por trás de você.</p>
+            <div class="step__head">
+              <span class="step__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="#i-chart-up"/></svg></span>
+              <div>
+                <span class="step__index">03.</span>
+                <h3>Aceleração de vendas</h3>
+              </div>
+            </div>
+            <p>Comece a faturar com o respaldo de um importador direto. Tenha pronta-entrega, estoque robusto e suporte técnico total ao seu lado.</p>
           </li>
         </ol>
       </div>
@@ -620,7 +498,7 @@
           <p data-pendencia="⚑10 · esta seção substitui a Prova Social. Volta a ser depoimento quando houver material real">Você revende importado. Estes são os papéis que respondem por você na ponta.</p>
         </div>
 
-        <div class="grid-hairline cols-3 reveal">
+        <div class="grid-hairline cols-3 norms-grid reveal">
           <article class="pillar">
             <span class="step__index">NBR</span>
             <h3>Norma brasileira</h3>
@@ -646,11 +524,6 @@
             <h3>Classe de cobertura</h3>
             <p>Classifica a resistência da cobertura de borracha. RMA 1 para abrasivo pesado, RMA 2 para granel comum.</p>
           </article>
-          <article class="pillar">
-            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-certificate"/></svg>
-            <h3>Laudo técnico</h3>
-            <p data-pendencia="⚑8 · o laudo sai por lote ou sob pedido?">Disponível para as linhas em estoque. É o documento que você entrega ao seu cliente.</p>
-          </article>
         </div>
       </div>
     </section>
@@ -665,28 +538,24 @@
 
         <div class="faq reveal">
           <details>
-            <summary>Que documentos preciso para me tornar parceiro? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq__answer"><p>CNPJ ativo e cópia do contrato social. Com isso a gente já monta sua proposta de parceria.</p></div>
+            <summary>A Kauthec do Brasil vende para consumidor final? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__answer"><p data-pendencia="⚑4 · esta resposta é do cliente e diz “priorizamos”, não “não vendemos”. O site afirma o canal protegido em outros quatro pontos. Confirmar com o Bruno qual das duas vale">Nosso modelo de negócio é rigorosamente estruturado para fortalecer a cadeia de distribuição nacional. Priorizamos o atendimento a revendedores e parceiros estratégicos, garantindo condições de atacado e, acima de tudo, a proteção de margem para quem está na ponta.</p></div>
           </details>
           <details>
-            <summary>Qual é o prazo de entrega? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq__answer"><p>É o nosso diferencial. Estoque em linha nas duas unidades e expedição de Ibiporã-PR ou Várzea Grande-MT, o que estiver mais perto de você. Prazo médio de <span data-pendencia="⚑6 · EXEMPLO INVENTADO. Trocar pelo prazo real">3 dias úteis</span>.</p></div>
+            <summary>Qual o prazo de entrega? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__answer"><p data-pendencia="⚑6 · resposta do cliente, sem número, enquanto o hero crava 72h. Decidir se o número entra aqui também">A agilidade logística é um dos nossos maiores diferenciais competitivos. Com unidades estrategicamente localizadas em Ibiporã (PR) e Várzea Grande (MT), conseguimos cobrir as principais regiões do país com velocidade superior.</p></div>
           </details>
           <details>
-            <summary>Vocês vendem direto para o meu cliente? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq__answer"><p data-pendencia="⚑4 · a pergunta que decide entre Kauthec e Multibelt. Confirmar antes de publicar">Não. Quem atende o cliente final é o parceiro. A Kauthec abastece e dá a retaguarda técnica.</p></div>
+            <summary>Quais são as formas de pagamento? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__answer"><p>Entendemos a dinâmica financeira do mercado B2B e atuamos como facilitadores do seu crescimento. Oferecemos flexibilidade através de faturamento via boleto bancário (sujeito à análise de crédito), PIX e transferências bancárias, e condições diferenciadas para compras programadas de alto volume. Nosso objetivo é estabelecer uma parceria financeira sustentável, permitindo que você mantenha um estoque robusto com prazos que respeitem o ciclo de vendas da sua região.</p></div>
           </details>
           <details>
-            <summary>Tem quantidade mínima para revender? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq__answer"><p data-pendencia="⚑11 · existe pedido mínimo? Em metros, em valor, ou por linha?">A definir por linha. O comercial informa na proposta de parceria, junto com as condições.</p></div>
+            <summary>Como faço para ser um revendedor? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__answer"><p>Buscamos parceiros que prezam pela excelência e queiram dominar seus mercados regionais. O processo é direto: você inicia o contato através do nosso formulário de parceria ou via WhatsApp. Nossa equipe realizará um diagnóstico ágil do seu perfil e área de atuação para apresentar uma proposta comercial personalizada, contemplando o mix de produtos ideal, tabelas de preço competitivas e todo o suporte técnico necessário para você acelerar seus resultados.</p></div>
           </details>
           <details>
-            <summary>Correia importada tem a mesma qualidade? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq__answer"><p data-pendencia="⚑8 · norma ou certificação? “Laudo por lote” confere?">Sim. As correias seguem NBR, DIN, ISO, ASTM e RMA, com laudo técnico disponível por lote.</p></div>
-          </details>
-          <details>
-            <summary>Vocês atendem a minha região? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq__answer"><p>Atendimento em todo o Brasil, com despacho das unidades de Ibiporã-PR e Várzea Grande-MT.</p></div>
+            <summary>A Kauthec faz instalação de correias? <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__answer"><p>Atuamos como um Centro de Serviços Avançado, focados em entregar a solução “pronta para rodar”. Nossa expertise está na preparação técnica: realizamos o refile na largura exata, aplicação de guias, taliscas e emendas técnicas de padrão internacional. Embora a instalação física em campo seja geralmente executada pelo revendedor ou pela equipe de manutenção local, fornecemos todo o suporte técnico e orientações de especificação para garantir que o produto performe com máxima vida útil na máquina.</p></div>
           </details>
         </div>
       </div>
@@ -697,9 +566,9 @@
       <div class="container">
         <div class="cta-band reveal">
           <div>
-            <span class="eyebrow">Parceria</span>
-            <h2 class="js-words">Pronto para revender com quem entrega no <span class="hl">prazo</span>?</h2>
-            <p class="lead">Preencha e o comercial entra em contato com a proposta de parceria.</p>
+            <span class="eyebrow">Aliança estratégica</span>
+            <h2 class="js-words">Pronto para elevar o <span class="hl">patamar</span> da sua revenda?</h2>
+            <p class="lead" data-pendencia="⚑ · claim de porte relativo. O cliente pediu “uma das maiores” no lugar de “a maior”. Confirmar se sustenta">Conecte-se a uma das maiores retaguardas técnicas e logísticas de correias do Brasil. Inicie sua jornada conosco para acessar estoque robusto e condições exclusivas de atacado.</p>
             <div class="hero__meta">
               <span class="meta">Matriz PR · 43 3373-6600</span>
               <span class="meta">Filial MT · 65 3627-3737</span>
@@ -709,7 +578,7 @@
           <div>
             <form class="form form--two" data-validate data-success="home-sucesso" novalidate>
               <label class="field">
-                <span>Nome</span>
+                <span>Nome completo</span>
                 <input type="text" name="nome" placeholder="Nome e sobrenome" autocomplete="name" required>
                 <span class="field__error" aria-live="polite"></span>
               </label>
@@ -724,14 +593,17 @@
                 <span class="field__error" aria-live="polite"></span>
               </label>
               <label class="field">
-                <span>WhatsApp</span>
+                <span>WhatsApp comercial</span>
                 <input type="tel" name="whatsapp" data-mask="phone" placeholder="(43) 9 9999-9999" inputmode="tel" required>
                 <span class="field__error" aria-live="polite"></span>
               </label>
               <div class="field field--full">
-                <button class="btn btn--primary btn--full" type="submit">Quero ser parceiro <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+                <button class="btn btn--primary btn--full" type="submit">Solicitar proposta de parceria <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
               </div>
-              <p class="form__notice field--full">Para fechar a parceria pediremos CNPJ ativo e cópia do contrato social.</p>
+              <div class="form__notice field--full" data-pendencia="⚑ · o print do cliente traz um reCAPTCHA aqui. Precisa de chave do Google e de decisão sobre LGPD antes de entrar">
+                <svg class="icon icon--lg" aria-hidden="true"><use href="#i-doc-check"/></svg>
+                <p>Para agilizar sua homologação, tenha em mãos o CNPJ ativo e a cópia do contrato social.</p>
+              </div>
             </form>
 
             <div class="form__success" id="home-sucesso" tabindex="-1" hidden>
@@ -791,25 +663,19 @@
     </div>
   </footer>
 
-  <!-- Toggle de teste A/B do hero (só index) -->
-  <div class="layout-switch hero-switch" role="group" aria-label="Alternar layout do hero">
-    <button class="layout-switch__btn is-active" type="button" data-hero="a" aria-pressed="true">A</button>
-    <button class="layout-switch__btn" type="button" data-hero="b" aria-pressed="false">B</button>
-  </div>
-
   <!-- Dois números. O botão nunca chuta qual. Ele pergunta. -->
   <div class="wa" data-open="false">
     <div class="wa__panel" role="dialog" aria-label="Escolha a unidade">
-      <strong>Fale com a unidade mais perto de você</strong>
-      <a class="wa__option" href="https://wa.me/5543988158640?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kauthec%20e%20quero%20falar%20sobre%20a%20parceria." target="_blank" rel="noopener noreferrer">
+      <strong>Fale com a unidade que atende a sua região</strong>
+      <a class="wa__option" href="https://wa.me/5543988158640?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kauthec%20do%20Brasil%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es%21" target="_blank" rel="noopener noreferrer">
         <strong>Matriz - Ibiporã / PR</strong>
-        <span>(43) 9 8815-8640</span>
+        <span>(43) 9 8815-8640 · todo o Brasil</span>
       </a>
-      <a class="wa__option" href="https://wa.me/5565996047226?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kauthec%20e%20quero%20falar%20sobre%20a%20parceria." target="_blank" rel="noopener noreferrer">
+      <a class="wa__option" href="https://wa.me/5565996047226?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Kauthec%20do%20Brasil%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es%21" target="_blank" rel="noopener noreferrer">
         <strong>Filial - Várzea Grande / MT</strong>
-        <span>(65) 9 9604-7226</span>
+        <span>(65) 9 9604-7226 · Mato Grosso</span>
       </a>
-      <span class="meta" data-pendencia="⚑1 · horário de atendimento">Atendimento comercial em horário comercial</span>
+      <span class="meta">Atendimento em horário comercial</span>
     </div>
     <button class="wa__toggle" type="button" aria-expanded="false" aria-label="Falar no WhatsApp">
       <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>

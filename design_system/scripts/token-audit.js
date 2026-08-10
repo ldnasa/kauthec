@@ -182,8 +182,11 @@ const PROSE_RULES = [
   },
   {
     id: "forbidden-word",
+    // "solucoes" saiu da lista em 2026-08: o cliente aprovou a copy que usa a
+    // palavra (H1 de Produtos, bloco Sobre, faixa do diferencial). Excecao
+    // registrada no CLAUDE.md. As outras seguem proibidas.
     label: "palavra proibida",
-    re: /\b(inovador(?:a|es|as)?|disruptiv[oa]s?|solu[cç][oõ]es|empoderador(?:a|es|as)?|bem-vind[oa]s?)\b/gi,
+    re: /\b(inovador(?:a|es|as)?|disruptiv[oa]s?|empoderador(?:a|es|as)?|bem-vind[oa]s?)\b/gi,
     suggest: (m) => `"${m}" e proibida no projeto (CLAUDE.md)`,
   },
 ];

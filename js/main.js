@@ -153,43 +153,9 @@
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
   }
 
-  /* ---------------------------------------------------------------- 6b. hero A/B (só index)
-     Toggle de teste para comparar layouts do banner. */
-  const hero = $(".hero[data-hero-variant]");
-  const heroSwitch = $(".hero-switch");
-  if (hero && heroSwitch) {
-    const buttons = $$("[data-hero]", heroSwitch);
-    const variantA = $(".hero__variant--a", hero);
-    const variantB = $(".hero__variant--b", hero);
-
-    const setVariant = (variant) => {
-      hero.dataset.heroVariant = variant;
-      buttons.forEach((btn) => {
-        const active = btn.dataset.hero === variant;
-        btn.classList.toggle("is-active", active);
-        btn.setAttribute("aria-pressed", String(active));
-      });
-      variantA?.setAttribute("aria-hidden", variant !== "a");
-      variantB?.setAttribute("aria-hidden", variant !== "b");
-      try { sessionStorage.setItem("kauthec-hero-variant", variant); } catch (_) { /* noop */ }
-    };
-
-    try {
-      const saved = sessionStorage.getItem("kauthec-hero-variant");
-      if (saved === "a" || saved === "b") setVariant(saved);
-    } catch (_) { /* noop */ }
-
-    buttons.forEach((btn) => {
-      btn.addEventListener("click", () => setVariant(btn.dataset.hero));
-    });
-  }
-
-  /* ---------------------------------------------------------------- 6c. produtos A/B + carrossel */
+  /* ---------------------------------------------------------------- 6c. carrossel da linha de produtos */
   const productsSection = $(".products-section");
   if (productsSection) {
-    const variantA = $(".products__variant--a", productsSection);
-    const variantB = $(".products__variant--b", productsSection);
-    const productButtons = $$("[data-products]", productsSection);
     const viewport = $("[data-carousel-viewport]", productsSection);
     const track = $("[data-carousel-track]", productsSection);
     const prev = $("[data-carousel-prev]", productsSection);
@@ -217,7 +183,6 @@
 
     if (viewport && track && slides.length) {
       layoutCarousel = () => {
-        if (productsSection.dataset.productsVariant !== "b") return;
         const count = perView();
         const gap = Number.parseFloat(getComputedStyle(track).gap) || 1;
         const slideW = (viewport.clientWidth - gap * (count - 1)) / count;
@@ -244,30 +209,7 @@
       });
     }
 
-    const setProductsVariant = (variant) => {
-      productsSection.dataset.productsVariant = variant;
-      variantA?.setAttribute("aria-hidden", variant !== "a");
-      variantB?.setAttribute("aria-hidden", variant !== "b");
-      productButtons.forEach((btn) => {
-        const active = btn.dataset.products === variant;
-        btn.classList.toggle("is-active", active);
-        btn.setAttribute("aria-pressed", String(active));
-      });
-      if (variant === "b") layoutCarousel?.();
-      try { sessionStorage.setItem("kauthec-products-variant", variant); } catch (_) { /* noop */ }
-    };
-
-    try {
-      const saved = sessionStorage.getItem("kauthec-products-variant");
-      if (saved === "a" || saved === "b") setProductsVariant(saved);
-      else layoutCarousel?.();
-    } catch (_) {
-      layoutCarousel?.();
-    }
-
-    productButtons.forEach((btn) => {
-      btn.addEventListener("click", () => setProductsVariant(btn.dataset.products));
-    });
+    layoutCarousel?.();
   }
 
   /* ---------------------------------------------------------------- 6d. explorador de linhas (produtos)
@@ -372,6 +314,83 @@
       $("#calc-area").textContent = `${nf.format(areaM2)} m²`;
       $("#calc-metros").textContent = `${nf.format(metrosLineares)} m`;
       out.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "nearest" });
+    });
+  }
+
+  /* ---------------------------------------------------------------- 7b. calculadora de comprimento
+     Correia sem fim sobre duas polias/roletes:
+
+       L = 2C + (PI/2)(D + d) + (D - d)^2 / (4C)
+
+     Com D = d o ultimo termo zera sozinho e sobra L = 2C + PI*D.
+     Espessura entra somando t ao diametro de cada polia, porque o comprimento
+     e medido na linha neutra da correia, nao na superficie da polia.
+
+     Aritmetica real, nao depende de tabela do cliente.
+  */
+  const beltForm = $("#belt-form");
+  if (beltForm) {
+    const beltOut = $("#belt-result");
+    const nfBelt = new Intl.NumberFormat("pt-BR", { maximumFractionDigits: 0 });
+    const nfBelt2 = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    const beltErro = (field, msg) => {
+      const wrap = field.closest(".field");
+      wrap.dataset.invalid = msg ? "true" : "false";
+      field.setAttribute("aria-invalid", msg ? "true" : "false");
+      $(".field__error", wrap).textContent = msg || "";
+      return !msg;
+    };
+
+    const num = (el) => (el.value.trim() === "" ? NaN : Number(el.value));
+
+    beltForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const elD = $("#belt-d");
+      const elDm = $("#belt-dm");
+      const elC = $("#belt-c");
+      const elT = $("#belt-t");
+
+      const rawD = num(elD);
+      const rawDm = num(elDm);
+      const rawC = num(elC);
+      const rawT = elT.value.trim() === "" ? 0 : Number(elT.value);
+
+      let ok = true;
+      ok = beltErro(elD, Number.isFinite(rawD) && rawD > 0 ? "" : "Informe o diâmetro da polia maior.") && ok;
+      ok = beltErro(elDm, Number.isFinite(rawDm) && rawDm > 0 ? "" : "Informe o diâmetro da polia menor.") && ok;
+      ok = beltErro(elC, Number.isFinite(rawC) && rawC > 0 ? "" : "Informe a distância entre centros.") && ok;
+      ok = beltErro(elT, Number.isFinite(rawT) && rawT >= 0 ? "" : "Espessura inválida. Deixe em branco se não souber.") && ok;
+      if (!ok) return;
+
+      if (rawD < rawDm) {
+        beltErro(elD, "O diâmetro maior tem que ser maior ou igual ao menor.");
+        return;
+      }
+
+      const D = rawD + rawT;
+      const d = rawDm + rawT;
+
+      // Geometria impossivel: as polias se sobrepoem.
+      if (rawC <= (rawD + rawDm) / 2) {
+        beltErro(elC, `Com esses diâmetros, a distância entre centros precisa passar de ${nfBelt.format((rawD + rawDm) / 2)} mm.`);
+        return;
+      }
+
+      const C = rawC;
+      const L = 2 * C + (Math.PI / 2) * (D + d) + Math.pow(D - d, 2) / (4 * C);
+      const iguais = D === d;
+
+      beltOut.hidden = false;
+      $("#belt-out-mm").textContent = `${nfBelt.format(Math.round(L))} mm`;
+      $("#belt-out-m").textContent = `${nfBelt2.format(L / 1000)} m`;
+      $("#belt-out-diam").textContent = rawT > 0
+        ? `D ${nfBelt.format(D)} mm · d ${nfBelt.format(d)} mm (com ${nfBelt.format(rawT)} mm de espessura)`
+        : `D ${nfBelt.format(D)} mm · d ${nfBelt.format(d)} mm`;
+      $("#belt-out-mode").textContent = iguais
+        ? "Polias iguais: a fórmula simplifica para L = 2C + πD"
+        : "Polias diferentes: fórmula completa, com a compensação de inclinação";
+      beltOut.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "nearest" });
     });
   }
 

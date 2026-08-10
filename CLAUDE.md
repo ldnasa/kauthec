@@ -84,8 +84,13 @@ The wireframe is **information architecture only**:
 
 **Forbidden words** (already filtered in `03-copy.md`, applies to any
 new copy: alt text, error messages, microcopy):
-- inovador, disruptivo, soluções, empoderador
+- inovador, disruptivo, empoderador
 - bem-vindo, estou pronto, claro, perfeito (as filler)
+
+**Exception (2026-08):** "soluções" is released for this client. It appears in
+the copy Bruno approved in "Ajustes SITE.docx" (Produtos H1, Sobre block,
+differentials band) and is used literally. Removed from the `token-audit.js`
+rule as well.
 
 **Forbidden punctuation:**
 - Em-dash in any client-facing output. Use hyphen or rewrite.

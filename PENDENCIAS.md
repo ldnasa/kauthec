@@ -85,7 +85,7 @@ Substituir pela tabela real antes de publicar.
 | ⚑ | Pergunta | Onde está no site |
 |---|---|---|
 | **⚑3** | Os números conferem? +100 clientes, +10.000 m/mês | Seção Números, trilho do hero |
-| **⚑11** | Existe pedido mínimo? Em metros, valor ou linha? | FAQ. Hoje responde "a definir por linha", que é verdade mas é fraco |
+| **⚑11** | Existe pedido mínimo? Em metros, valor ou linha? | **Saiu do site em 2026-08.** O FAQ foi substituído pelas 5 perguntas do cliente e esta não estava entre elas. Continua sem resposta |
 | **⚑10** | Depoimentos e logos reais de parceiros | Não existe. A seção Prova Social foi **substituída** por um bloco de normas expandido. Depoimento placeholder em B2B industrial é pior que ausência |
 | **⚑5** | O vídeo institucional do YouTube ainda representa a empresa? | Seção Sobre. Hoje o slot é a foto da fachada. Se o vídeo servir, vira embed |
 | **⚑12** | As tabelas KT 140 / KT 220 e os tipos de cobertura ainda batem? | Página Produtos. Vieram do site antigo |

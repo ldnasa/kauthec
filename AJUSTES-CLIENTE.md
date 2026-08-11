@@ -31,6 +31,21 @@ menciona. Reprocessado item a item:
 | CTA final | Bloco "Aliança estratégica" completo, com rótulos, botão e caixa de homologação |
 | Produtos | Hero "Portfólio técnico / Soluções em Correias..." e o painel da Correia em V (eyebrow, título, lead, perfis inline, Aplicação e Estoque) |
 
+### Respostas da gestora (2026-08, via Slack)
+
+| Pergunta | Resposta | Ação |
+|---|---|---|
+| ⚑4 canal protegido | "Pode manter os dois" | Marcadores ⚑4 removidos. Deixou de bloquear publicação |
+| Capacidade: "+10.000m/mês" ou "processados mensalmente" | "Está falando a mesma coisa, pode manter" | Mantido "+10.000m/mês" |
+| "5 linhas críticas" no hero de Produtos | "Mudaram na reunião para 4 linhas, pode corrigir" | Já estava 4. Confirmado |
+| Aplicação: "Indústria Pesada" ou "Indústria" | "Corrige para a anotação" | Já estava "Indústria, Mineração e Agronegócio". Confirmado |
+| FAQ de prazo x filial só MT | "A matriz cobre as principais regiões e a filial só MT" | Resposta reescrita separando as duas unidades |
+| Bloco da fórmula e passo a passo | "Era para entendermos como implementar, não precisa lá" | Bloco removido. A frase de K3 ("adapta o cálculo automaticamente") foi preservada na introdução, porque era um "incluir" explícito do documento |
+
+Sem resposta ainda: ⚑8 certificação (segue bloqueando), ⚑3 os +15 mil parceiros,
+o reCAPTCHA do print, o botão de ficha técnica ausente do print, o número de 72h no
+FAQ e qual unidade aparece na foto da fachada.
+
 ### Contradições dentro do próprio documento
 
 - **Capacidade**: texto digitado diz "+10.000m processados mensalmente", print diz

@@ -1157,39 +1157,6 @@ input:focus, select:focus, textarea:focus { border-color: var(--color-accent); }
   font-style: italic;
 }
 
-.calc-belt__method { display: grid; gap: var(--space-5); margin-top: var(--space-6); }
-/* Item de grid tem min-width:auto, entao a formula com white-space:nowrap
-   esticava a faixa e estourava a pagina no mobile em vez de rolar sozinha. */
-.calc-belt__method > * { min-width: 0; }
-@media (min-width: 62rem) {
-  .calc-belt__method { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-6); }
-}
-.calc-belt__method h3 { margin-bottom: var(--space-3); }
-.calc-belt__formula {
-  margin-top: var(--space-4);
-  padding: var(--space-4);
-  border: var(--border-width) solid var(--color-border);
-  background: var(--color-surface);
-  overflow-x: auto;
-}
-.calc-belt__method code {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-accent-text);
-  white-space: nowrap;
-}
-.calc-belt__steps {
-  margin: 0;
-  padding-left: var(--space-4);
-  display: grid;
-  gap: var(--space-3);
-  color: var(--color-text-tertiary);
-  font-size: var(--text-sm);
-}
-.calc-belt__steps strong { color: var(--color-text); font-weight: var(--weight-semibold); }
-.calc-belt__steps::marker { color: var(--color-accent-text); }
-.calc-belt__steps li::marker { color: var(--color-accent-text); font-family: var(--font-mono); }
-
 /* ============================================================ TABELA */
 .table-wrap { overflow-x: auto; border: var(--border-width) solid var(--color-border-subtle); }
 table { width: 100%; border-collapse: collapse; font-size: var(--text-xs); }

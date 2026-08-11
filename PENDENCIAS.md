@@ -27,7 +27,11 @@ Home tem 21 marcações. É a página para abrir com o Bruno.
 Estes dois não são copy. São afirmações sobre fatos externos. Errar aqui não é texto ruim,
 é problema comercial e jurídico.
 
-### ⚑4 · A Kauthec se compromete formalmente a não vender ao cliente do parceiro?
+### ⚑4 · RESOLVIDA (2026-08) · A Kauthec se compromete a não vender ao cliente do parceiro?
+
+**Decisão da gestora: manter os dois textos.** A resposta do FAQ ("priorizamos
+revendedores") e os quatro blocos de canal protegido convivem no site. Marcadores
+removidos do HTML.
 
 No `01-debriefing.md` isso aparece como **exemplo de resposta**, não como resposta.
 Está publicado em quatro lugares: Sobre, pilar "Parceria de verdade", benefício

@@ -6,9 +6,10 @@ Fonte da verdade da marca. O build copia daqui para `assets/` já otimizado.
 
 | Arquivo | Peso | Uso |
 |---|---|---|
+| `logo-kauthec-do-brasil.svg` | 18,5 KB | **Em uso no site desde 2026-08.** Lockup "KAUTHEC" + "do Brasil". Header e footer das 4 páginas, e `logo` do schema.org |
 | `logo-kauthec.svg` | 39,6 KB | **Original do cliente.** Não usar no site. Preservado como fonte |
-| `logo-kauthec-lockup.svg` | 25,1 KB | Emblema + wordmark. Header, footer, OG image |
-| `logo-kauthec-wordmark.svg` | 1,7 KB | Só a palavra KAUTHEC. Header compacto, mobile |
+| `logo-kauthec-lockup.svg` | 25,1 KB | Emblema + wordmark. Fora de uso desde 2026-08 |
+| `logo-kauthec-wordmark.svg` | 1,7 KB | Só a palavra KAUTHEC. Fora de uso desde 2026-08 |
 | `logo-kauthec-emblem.svg` | 23,4 KB | Só o medalhão. Favicon, avatar, selo |
 
 ## Cor de marca
@@ -90,3 +91,33 @@ impressão grande ou fachada, não serve.
 
 Para web, nos tamanhos que o site usa (header 40px, footer 32px, favicon 64px, OG 200px),
 o serrilhado é invisível. Verificado em render.
+
+
+---
+
+## Logo em uso no site (2026-08)
+
+O cliente pediu o lockup **com "do Brasil"**. O arquivo entregue foi
+`logo-kauthec-do-brasil.svg`: um `<path>` único, `viewBox="0 0 1296 283"`, com
+`fill="#0D0D0C"` cravado.
+
+Como entrou no site:
+
+1. O `fill` fixo foi **removido**, para o desenho herdar o `currentColor` do `<svg>`
+   que o usa. Sem isso ele fica preto no header escuro, ou seja, invisível.
+2. As coordenadas foram arredondadas para **1 casa decimal**: 18,8 KB para 14,3 KB,
+   25% menor. Comparado pixel a pixel com o original renderizado a 900px de largura,
+   a diferença fica em 513 pixels de antialiasing. Arredondar para inteiro daria
+   47% de economia mas já deforma as curvas do script.
+3. O path entrou no sprite `<g id="logo">` das 4 páginas, substituindo os 8 paths do
+   wordmark antigo.
+
+**Proporção.** A palavra KAUTHEC ocupa 154 das 283 unidades de altura do viewBox.
+Por isso a altura no CSS subiu de 28px para 40px no header e de 26px para 38px no
+footer: mantém a palavra com presença parecida com a do wordmark antigo e acomoda a
+linha "do Brasil" embaixo.
+
+**Custo.** O path inline pesa 14,3 KB por página, 5,7 KB gzipado. Como é inline, não
+há cache entre páginas. Se isso incomodar, a alternativa é servir o arquivo externo e
+colorir por `mask-image` com `background: currentColor`, o que dá cache único ao custo
+de perder o logo em navegador sem suporte a `mask`.

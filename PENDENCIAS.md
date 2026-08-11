@@ -1,7 +1,10 @@
-# Pendências com o cliente
+# Pendências · handoff para a gestora
 
-O site está construído e navegável. Estes são os pontos que ainda dependem de resposta
-do Bruno. Nenhum impede o build. Dois impedem a **publicação**.
+O site está construído e navegável. **O front-end está entregue.**
+
+Esta lista é o handoff: pontos que dependem de informação, decisão ou integração que
+não são de front-end. Vão da gestora para o cliente e para o back-end da agência.
+Nenhum impede a entrega do front. Publicação e integrações não são deste escopo.
 
 ## Como ver na tela
 
@@ -18,14 +21,15 @@ Cada ponto pendente fica com contorno tracejado dourado e um rótulo dizendo o q
 Uma barra no rodapé conta quantos são. O console do navegador lista todos.
 Sem o parâmetro, o modo some por completo e o site fica limpo.
 
-Home tem 21 marcações. É a página para abrir com o Bruno.
+Home tem 21 marcações. É a página para abrir na reunião de handoff.
 
 ---
 
-## Bloqueiam a publicação
+## Afirmações que precisam de confirmação do cliente
 
-Estes dois não são copy. São afirmações sobre fatos externos. Errar aqui não é texto ruim,
-é problema comercial e jurídico.
+Não são copy. São afirmações sobre fatos externos, e errar aqui é problema comercial e
+jurídico, não texto ruim. O front publica o que for confirmado; a confirmação vem pela
+gestora.
 
 ### ⚑4 · RESOLVIDA (2026-08) · A Kauthec se compromete a não vender ao cliente do parceiro?
 
@@ -103,11 +107,15 @@ Substituir pela tabela real antes de publicar.
 
 ---
 
-## Dívidas técnicas, não do cliente
+## Para o back-end da agência
 
-- **O formulário não envia.** Não há backend definido. O `submit` valida tudo (inclusive
-  o dígito verificador do CNPJ), mostra o estado de envio e a mensagem de sucesso, mas
-  não posta em lugar nenhum. Definir destino: e-mail, Formspree, endpoint próprio.
+- **O formulário não envia.** O front valida tudo (inclusive o dígito verificador do
+  CNPJ), mostra o estado de envio e a mensagem de sucesso, mas não posta em lugar
+  nenhum, porque o destino é definição de back-end. Falta o endpoint.
+- **reCAPTCHA.** O print do cliente traz um no bloco Aliança Estratégica. Precisa de
+  chave do Google e de decisão sobre o aviso de LGPD. Não entrou no front.
+
+## Dívidas técnicas do front
 - **Tailwind CDN está carregado e não é usado.** Zero utilities no markup. Ou usamos, ou
   cai no Passo E. Ver nota no fim do README.
 - **Sem mapa na página Contato.** O `02-estrutura.md` pede mapa. Embed do Google Maps
